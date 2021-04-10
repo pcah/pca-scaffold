@@ -1,0 +1,724 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>tutorial - cookiecutter-pypackage (forked)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="cookiecutter-pypackage (forked)" class="md-header-nav__button md-logo" aria-label="cookiecutter-pypackage (forked)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            cookiecutter-pypackage (forked)
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="cookiecutter-pypackage (forked)" class="md-nav__button md-logo" aria-label="cookiecutter-pypackage (forked)">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    cookiecutter-pypackage (forked)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        tutorial
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-cookiecutter" class="md-nav__link">
+    Step 1: Install Cookiecutter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-your-package" class="md-nav__link">
+    Step 2: Generate Your Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-a-virtual-environment-for-your-development" class="md-nav__link">
+    Step 3: Build a virtual environment for your development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-install-dev-requirements" class="md-nav__link">
+    Step 4: Install Dev Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-create-a-github-repo" class="md-nav__link">
+    Step 5: Create a GitHub Repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-publish-your-packageto-testpypi" class="md-nav__link">
+    Step 6: Publish your package...to testpypi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-set-up-github-actions" class="md-nav__link">
+    Step 7. Set Up Github Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-set-up-codecov-integration" class="md-nav__link">
+    Step 8. Set Up codecov integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-set-up-readthedocs-integration" class="md-nav__link">
+    Step 9. Set up readthedocs integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../console_script_setup/" class="md-nav__link">
+        console script
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompots.md" class="md-nav__link">
+        prompots
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../travis_pypi_setup/" class="md-nav__link">
+        setup travis
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pypi_release_checklist/" class="md-nav__link">
+        release checklist
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-cookiecutter" class="md-nav__link">
+    Step 1: Install Cookiecutter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-your-package" class="md-nav__link">
+    Step 2: Generate Your Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-build-a-virtual-environment-for-your-development" class="md-nav__link">
+    Step 3: Build a virtual environment for your development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-install-dev-requirements" class="md-nav__link">
+    Step 4: Install Dev Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-create-a-github-repo" class="md-nav__link">
+    Step 5: Create a GitHub Repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-publish-your-packageto-testpypi" class="md-nav__link">
+    Step 6: Publish your package...to testpypi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-set-up-github-actions" class="md-nav__link">
+    Step 7. Set Up Github Actions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-set-up-codecov-integration" class="md-nav__link">
+    Step 8. Set Up codecov integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-set-up-readthedocs-integration" class="md-nav__link">
+    Step 9. Set up readthedocs integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>tutorial</h1>
+                
+                <h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
+<div class="note">
+
+<div class="title">
+
+Note
+
+</div>
+
+Did you find any of these instructions confusing? [Edit this file][] and
+submit a pull request with your improvements!
+
+</div>
+
+<p>To start with, you will need a <a href="https://github.com/">GitHub account</a> and an account on
+<a href="https://pypi.python.org/pypi">PyPI</a>. Create these before you get started on this tutorial. If you
+are new to Git and GitHub, you should probably spend a few minutes on
+some of the tutorials at the top of the page at <a href="https://help.github.com/">GitHub Help</a>.</p>
+<h3 id="step-1-install-cookiecutter">Step 1: Install Cookiecutter<a class="headerlink" href="#step-1-install-cookiecutter" title="Permanent link">&para;</a></h3>
+<p>Install cookiecutter:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install cookiecutter
+</code></pre></div>
+</td></tr></table>
+<p>We'll also need poetry so [install that
+too](<a href="https://python-poetry.org/docs/#installation">https://python-poetry.org/docs/#installation</a>):</p>
+<h3 id="step-2-generate-your-package">Step 2: Generate Your Package<a class="headerlink" href="#step-2-generate-your-package" title="Permanent link">&para;</a></h3>
+<p>Now it's time to generate your Python package.</p>
+<p>Use cookiecutter, pointing it at the cookiecutter-pypackage repo:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cookiecutter https://github.com/zillionare/cookiecutter-pypackage.git
+</code></pre></div>
+</td></tr></table>
+<p>You'll be asked to enter a bunch of values to set the package up. If you
+don't know what to enter, stick with the defaults.</p>
+<h3 id="step-3-build-a-virtual-environment-for-your-development">Step 3: Build a virtual environment for your development<a class="headerlink" href="#step-3-build-a-virtual-environment-for-your-development" title="Permanent link">&para;</a></h3>
+<p>Now build a virtual python environment for your development, and develop your project 
+always in that environment from now on.</p>
+<p>You can choose either annaconda or virtualenv. I prefer annaconda (actually miniconda) 
+though.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>conda create -n mypackage python=3.8
+conda activate mypackage
+</code></pre></div>
+</td></tr></table>
+<h3 id="step-4-install-dev-requirements">Step 4: Install Dev Requirements<a class="headerlink" href="#step-4-install-dev-requirements" title="Permanent link">&para;</a></h3>
+<p>You should still be in the folder containing the <code>pyproject.toml</code> file.</p>
+<p>Install the new project's local development requirements inside a
+virtual environment using pipenv:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install poetry
+poetry install -E doc -E dev -E <span class="nb">test</span>
+tox
+</code></pre></div>
+</td></tr></table>
+<p>We start with install poetry, since the whole project is managed by poetry. Then we
+installed extra dependency need by developer, such as documentation build tools, lint, 
+formatting and test tools etc.</p>
+<p>We did a smoke test at last by running <code>tox</code>. This will give you a test report and lint
+report. You should see no errors except some lint warnings.</p>
+<details class="tips"><summary>Tips</summary><p>Extra dependencies are grouped into three groups, doc, dev and test for better 
+granularity. When you ship the package, dependencies in group doc, dev and test will
+ not be shipped.</p>
+<p>As the developer, you will need install all the dependencies.</p>
+</details>
+<details class="tips"><summary>Tips</summary></details>
+<p>if you found erros like the following during tox run:
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ERROR: InterpreterNotFound: python3.9
+</code></pre></div>
+</td></tr></table>
+  don't be panic, this is just because python3.x is not found on your machine. If you
+  decide to support that version of Python in your package, please install it on your
+  machine. Otherwise, remove it from tox.ini and pyproject.toml (search python3.x then
+  remove it))</p>
+<h3 id="step-5-create-a-github-repo">Step 5: Create a GitHub Repo<a class="headerlink" href="#step-5-create-a-github-repo" title="Permanent link">&para;</a></h3>
+<p>Go to your GitHub account and create a new repo named <code>mypackage</code>, where
+<code>mypackage</code> matches the <code>[project_slug]</code> from your answers to running
+cookiecutter.</p>
+<p>You will find one folder named after the <code>[project_slug]</code>. Move into
+this folder, and then setup git to use your GitHub repo and upload the
+code:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> mypackage
+
+<span class="c1"># !!! uncomment the following line, if you didn&#39;t choose install pre-commit hooks at </span>
+<span class="c1"># last step. If you chose &#39;yes&#39;, then cookiecutter have already done that for you, since </span>
+<span class="c1"># pre-commit install need repo exist.</span>
+
+<span class="c1"># git init</span>
+git add .
+git commit -m <span class="s2">&quot;Initial skeleton.&quot;</span>
+git branch -M main
+git remote add origin git@github.com:myusername/mypackage.git
+git push -u origin main
+</code></pre></div>
+</td></tr></table>
+<p>Where <code>myusername</code> and <code>mypackage</code> are adjusted for your username and
+package name.</p>
+<p>You'll need a ssh key to push the repo. You can <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generate</a> a key or
+<a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add</a> an existing one.</p>
+<details class="tips"><summary>Tips</summary></details>
+<p>if you have asked to install pre-commit hooks at last step, then you should find
+  pre-commit is running when you run <code>git commit</code>, and some files may be changed by
+  hooks. If so, please add these files and commit again</p>
+<h3 id="step-6-publish-your-packageto-testpypi">Step 6: Publish your package...to testpypi<a class="headerlink" href="#step-6-publish-your-packageto-testpypi" title="Permanent link">&para;</a></h3>
+<p>You can try to build and publish your package to test pypi, if it works well, so be
+  true with real pypi.</p>
+<ol>
+<li>
+<p>config testpypi repo by:
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry config repositories.testpypi https://test.pypi.org/legacy/
+</code></pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>in case you haven't register testpyi account, please visit 
+  <a href="https://test.pypi.org/">testpypi</a>  and register account, and create an upload token 
+  under <code>account settings</code> pages</p>
+</li>
+<li>
+<p>run the following command to publish your package to testpypi:
+  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry publish --build -r testpypi
+</code></pre></div>
+</td></tr></table>
+  your will be prompted with account and password, use <code>__token__</code> as username, and your
+  token as password.</p>
+</li>
+</ol>
+<h3 id="step-7-set-up-github-actions">Step 7. Set Up Github Actions<a class="headerlink" href="#step-7-set-up-github-actions" title="Permanent link">&para;</a></h3>
+<p>Once you've pushed your files  github repo, github actions will be all set, except
+  for one thing: you need configure secrets for deployment.</p>
+<p>Here is the procedures:</p>
+<p>Go to your repo's setting page, find <code>Environments</code> menu at the left sidebar, then
+  click <code>New environment</code> button, create a new environment (I'd prefer <code>CI</code> as its
+  name):</p>
+<p>Then add secrets into this environment. Secrets should include:</p>
+<ul>
+<li>TEST_PYPI_API_TOKEN</li>
+<li>PYPI_API_TOKEN, which you should apply on at <a href="https://pypi.python.org/pypi">PYPI</a></li>
+</ul>
+<h3 id="step-8-set-up-codecov-integration">Step 8. Set Up codecov integration<a class="headerlink" href="#step-8-set-up-codecov-integration" title="Permanent link">&para;</a></h3>
+<p>This template already baked <a href="https://codecov.io/">codecov</a> in. You don't need to set token for codecov,
+  however, you should grant access to your repo for codecov. This can be done at either
+  side, github or codecov.</p>
+<p>You can logon to <a href="https://codecov.io/">codecov</a>, sign in with your github account, then add new repository
+  to codecov.</p>
+<h3 id="step-9-set-up-readthedocs-integration">Step 9. Set up readthedocs integration<a class="headerlink" href="#step-9-set-up-readthedocs-integration" title="Permanent link">&para;</a></h3>
+<p>The template has baked <a href="https://readthedocs.org">readthedocs</a> in, all you need is just goto [readthedos]</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../console_script_setup/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                console script
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
