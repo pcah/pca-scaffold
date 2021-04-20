@@ -786,24 +786,14 @@ on <code>install</code> button, following directions until all set.</p>
 <p>Back to your develop environment, find the folder named after the <code>[project_slug]</code>. 
 Move into this folder, and then setup git to use your GitHub repo and upload the
 code:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> mypackage
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> mypackage
 
-<span class="c1"># !!! uncomment the following line, if you didn&#39;t choose install pre-commit hooks at </span>
-<span class="c1"># last step. If you chose &#39;yes&#39;, then cookiecutter have already done that for you, since </span>
-<span class="c1"># pre-commit install need repo exist.</span>
-
-<span class="c1"># git init</span>
 git add .
 git commit -m <span class="s2">&quot;Initial skeleton.&quot;</span>
 git branch -M main
