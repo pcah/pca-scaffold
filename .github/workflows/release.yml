@@ -6,7 +6,7 @@ name: build & release
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branch: release
+    branches: [ master, main ]
     tags:
       - 'v*'
 
@@ -61,29 +61,3 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./site
-
-      - name: Build wheels and source tarball
-        run: >-
-          poetry build
-
-      - name: show temporary files
-        run: >-
-          ls -l
-
-      - name: create github release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          body_path: ./CHANGELOG.md
-          files: dist/*.whl
-          draft: false
-          prerelease: false
-
-      - name: publish to PYPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
-          skip_existing: true

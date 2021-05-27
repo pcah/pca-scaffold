@@ -1,10 +1,14 @@
 # PyPI Release Checklist
 
+## Before Your First Release
+
+You better visit PyPI to make sure your package name is unused.
+
 ## For Every Release
 
-0.  Check out release branch, merge all changes from master/main to release
+0.  Check out release branch, merge all changes from master/main to release.
 
-1.  Update HISTORY.md
+1.  Update HISTORY.md.
 
     Be noticed that github workflow will generate a changelog for you automatically.
 
@@ -15,16 +19,16 @@
     > git commit -m "Changelog for upcoming release 0.1.1."
     > ```
 
-3.  Update version number (can also be patch or major)
+3.  Update version number and automatically create commit,tag(can also be patch or major).
 
     > ``` bash
-    > poetry patch
+    > poetry run bump2version minor
     > ```
 
 4.  Run the tests:
 
     > ``` bash
-    > tox
+    > poetry run tox
     > ```
 
 5.  Push the commit to release branch:
@@ -40,10 +44,10 @@
     > git push --tags
     > ```
 
-    tag_name has to be started with 'v'(lower case), to leverage github release workflow.
+    tag_name has to be started with 'v'(lower case), to leverage GitHub release workflow.
 
 7.  Check the PyPI listing page to make sure that the README, release
-    notes, and roadmap display properly. If tox test passwed, this should be ok, since
+    notes, and roadmap display properly. If tox test passed, this should be ok, since
     we have already run twine check during tox test.
 
 ## About This Checklist
