@@ -5,7 +5,6 @@ import subprocess
 import sys
 from contextlib import contextmanager
 from typing import List
-from unittest import mock
 
 import pytest
 from cookiecutter.utils import rmtree
@@ -76,8 +75,8 @@ def execute(command: List[str], dirpath: str, timeout=30, supress_warning=True):
     """
     with inside_dir(dirpath):
         proc = subprocess.Popen(
-            command, 
-            stderr=subprocess.PIPE, 
+            command,
+            stderr=subprocess.PIPE,
             stdout=subprocess.PIPE
         )
 
@@ -121,7 +120,7 @@ def test_bake_with_defaults(cookies):
         mkdocs_yml = os.path.join(result._project_dir, "mkdocs.yml")
         with open(mkdocs_yml, "r") as f:
             lines = f.readlines()
-            assert '  - authors: authors.md\n' in lines
+            assert '  - Home: index.md\n' in lines
 
 
 def test_bake_without_author_file(cookies):
@@ -132,7 +131,7 @@ def test_bake_without_author_file(cookies):
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'AUTHORS.md' not in found_toplevel_files
         doc_files = [f.basename for f in result.project.join('docs').listdir()]
-        assert 'authors.md' not in doc_files     
+        assert 'authors.md' not in doc_files
 
         # make sure '-authors: authors.md' not appeared in mkdocs.yml
         mkdocs_yml = os.path.join(result._project_dir, "mkdocs.yml")
@@ -170,25 +169,25 @@ def test_bake_not_open_source(cookies):
         assert 'license' not in result.project.join(_DEPENDENCY_FILE).read()
 
 
-def test_not_using_pytest(cookies):
-    with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'n'}) as result:
-        assert result.project.isdir()
-        # Test pyproject doesn't install pytest
-        dep_file_path = result.project.join(_DEPENDENCY_FILE)
-        lines = dep_file_path.readlines()
-        assert "pytest = \"*\"\n" not in lines
-        # Test contents of test file
-        test_file_path = result.project.join('tests/test_python_boilerplate.py')
-        lines = test_file_path.readlines()
-        assert "import unittest" in ''.join(lines)
-        assert "import pytest" not in ''.join(lines)
+# def test_not_using_pytest(cookies):
+#     with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'n'}) as result:
+#         assert result.project.isdir()
+#         # Test pyproject doesn't install pytest
+#         dep_file_path = result.project.join(_DEPENDENCY_FILE)
+#         lines = dep_file_path.readlines()
+#         assert "pytest = \"*\"\n" not in lines
+#         # Test contents of test file
+#         test_file_path = result.project.join('tests/test_python_boilerplate.py')
+#         lines = test_file_path.readlines()
+#         assert "import unittest" in ''.join(lines)
+#         assert "import pytest" not in ''.join(lines)
 
 
 def test_docstrings_style(cookies):
     with bake_in_temp_dir(cookies, extra_context={'docstrings_style': 'google'}) as result:
         assert result.project.isdir()
         # Test lint rule contains google style
-        flake8_conf_file_apth = result.project.join(".flake8")
+        flake8_conf_file_apth = result.project.join("setup.cfg")
         lines = flake8_conf_file_apth.readlines()
         assert "docstring-convention = google" in ''.join(lines)
 
@@ -216,7 +215,7 @@ def test_docstrings_style(cookies):
 
 @pytest.mark.parametrize("args", [
     ({'command_line_interface': "No command-line interface"}, False),
-    ({'command_line_interface': 'fire'}, True),
+    ({'command_line_interface': 'click'}, True),
 ])
 def test_bake_with_no_console_script(cookies, args):
     context, is_present = args
@@ -231,14 +230,14 @@ def test_bake_with_no_console_script(cookies, args):
 
 
 def test_bake_with_console_script_cli(cookies):
-    context = {'command_line_interface': 'fire'}
+    context = {'command_line_interface': 'click'}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, project_dir = project_info(result)
     module_path = os.path.join(project_dir, 'cli.py')
 
     out = execute([sys.executable, module_path], project_dir)
-    assert f"is one of the following:{os.linesep}{os.linesep}     help{os.linesep}" in out
-
-    out = execute([sys.executable, module_path, "help"], project_dir)
-
     assert project_slug in out
+
+    out = execute([sys.executable, module_path, "--help"], project_dir)
+
+    assert 'Show this message and exit.' in out

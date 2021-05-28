@@ -15,20 +15,8 @@
 <a href="https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io/en/latest/?badge=latest">
     <img src="https://readthedocs.org/projects/{{ cookiecutter.project_slug | replace("_", "-") }}/badge/?version=latest" alt="Documentation Status">
 </a>
-{% if cookiecutter.add_pyup_badge == 'y' %}
-<a href="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/">
-<img src="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg" alt="Updates">
-</a>
-{% endif %}
 </p>
 {% else %}
-{% if cookiecutter.add_pyup_badge == 'y' %}
-<p>
-<a href="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/">
-<img src="https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/shield.svg" alt="Updates">
-</a>
-</p>
-{% endif %}
 {% endif %}
 
 {{ cookiecutter.project_short_description }}

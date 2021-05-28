@@ -1,67 +1,58 @@
-# Python Project Wizard
+# Cookiecutter PyPackage
 
-A tool for creating skeleton python project, built with popular develop tools and 
+Cookiecutter template for a Python package, built with popular develop tools and
 conform to best practice.
 
-[![Version](http://img.shields.io/pypi/v/ppw?color=brightgreen)](https://pypi.python.org/pypi/ppw)
-[![CI Status](https://github.com/zillionare/cookiecutter-pypackage/actions/workflows/release.yml/badge.svg)](https://github.com/zillionare/cookiecutter-pypackage)
-[![Dowloads](https://img.shields.io/pypi/dm/ppw)](https://pypi.org/project/ppw/)
+[![CI Status](https://github.com/waynerv/cookiecutter-pypackage/actions/workflows/release.yml/badge.svg)](https://github.com/zillionare/cookiecutter-pypackage)
 [![License](https://img.shields.io/pypi/l/ppw)](https://opensource.org/licenses/BSD-2-Clause)
-![Python Versions](https://img.shields.io/pypi/pyversions/ppw)
 
 
 ## Features
 
 This tool will create Python project with the following features:
 
-* [Poetry]: Manage version, dependancy, build and release
-* [Mkdocs]: Writting your docs in markdown style
-* Testing with [Pytest] (unittest is still supported out of the box)
-* Code coverage report and endorsed by [Codecov]
-* [Tox]: Test your code against environment matrix, lint and artifact check.
-* Format with [Black] and [Isort]
-* Lint code with [Flake8] and [Flake8-docstrings]
-* [Pre-commit hooks]: Formatting/linting anytime when commit/run local tox/CI
-* [Mkdocstrings]: Auto API doc generation
-* Command line interface using [Python Fire] (optional)
-* Continuouse Integration/Deployment by [github actions], includes:
+* [Poetry](https://python-poetry.org/): Manage version, dependancy, build and release
+* [Mkdocs](https://www.mkdocs.org): Writting your docs in markdown style
+* Testing with [Pytest](https://pytest.org) (unittest is still supported out of the box)
+* Code coverage report and endorsed by [Codecov](https://codecov.io)
+* [Tox](https://tox.readthedocs.io): Test your code against environment matrix, lint and artifact check.
+* Format with [Black](https://github.com/psf/black) and [Isort](https://github.com/PyCQA/isort)
+* Lint code with [Flake8](https://flake8.pycqa.org) and [Flake8-docstrings](https://pypi.org/project/flake8-docstrings/)
+* Check static type with [Mypy](http://mypy-lang.org/)
+* [Pre-commit hooks](https://pre-commit.com/): Formatting/linting anytime when commit/run local tox/CI
+* [Mkdocstrings](https://mkdocstrings.github.io/): Auto API doc generation
+* Command line interface using [Click](https://click.palletsprojects.com/en/8.0.x/) (optional)
+* Continuous Integration/Deployment by [GitHub actions](https://github.com/features/actions), includes:
     - publish dev build/official release to TestPyPI/PyPI automatically when CI success
     - publish documents automatically when CI success
-    - extract change log from github and integrate with release notes automatically
-* Host your documentation from [Git Pages] with zero-config
+    - extract change log from GitHub and integrate with release notes automatically
+* Host your documentation from [GitHub Pages](https://pages.github.com) with zero-config
 
 ## Quickstart
 
-Install ppw if you haven't install it yet:
+Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
 
 ```
-  pip install -U ppw
+pip install -U cookiecutter
 ```
 
-Generate a Python package project by simple run:
+Generate a Python package project:
 
 ```
-  ppw
+cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
 ```
 
-Then follow **[Tutorial](https://zillionare.github.io/cookiecutter-pypackage/tutorial/)** to finish other configurations.
+Then follow **[Tutorial](https://waynerv.github.io/cookiecutter-pypackage/tutorial/)** to finish other configurations.
 
 # Credits
 
-This repo is forked from [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage), and borrowed some ideas from [briggySmalls](https://github.com/briggySmalls/cookiecutter-pypackage)
+This repo is forked from [zillionare/cookiecutter-pypackage](https://github.com/zillionare/cookiecutter-pypackage/), which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
 
+# Todo
 
-[poetry]: https://python-poetry.org/
-[mkdocs]: https://www.mkdocs.org
-[pytest]: https://pytest.org
-[codecov]: https://codecov.io
-[tox]: https://tox.readthedocs.io
-[black]: https://github.com/psf/black
-[isort]: https://github.com/PyCQA/isort
-[flake8]: https://flake8.pycqa.org
-[flake8-docstrings]: https://pypi.org/project/flake8-docstrings/
-[mkdocstrings]: https://mkdocstrings.github.io/
-[Python Fire]: https://github.com/google/python-fire
-[github actions]: https://github.com/features/actions
-[Git Pages]: https://pages.github.com
-[Pre-commit hooks]: https://pre-commit.com/
+[x] add makefile
+[x] resolve pre-commit fail
+[x] add bump2version
+[ ] add flake8 rst docstring support
+[ ] a better README template
+[ ] improve docs

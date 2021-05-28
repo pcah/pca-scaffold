@@ -1,6 +1,6 @@
-site_name: Python Project Wizard (ppw)
-repo_url: https://github.com/zillionare/cookiecutter-pypackage
-repo_name: Python Project Wizard
+site_name: Cookiecutter Pypackage
+repo_url: https://github.com/waynerv/cookiecutter-pypackage
+repo_name: cookiecutter-pypackage
 nav:
   - Introduction: index.md
   - Tutorial: tutorial.md
@@ -8,16 +8,17 @@ nav:
   - Release checklist: pypi_release_checklist.md
   - FAQ: faq.md
   - History: history.md
-  
+
 theme:
   name: material
   language: en
   #logo: assets/logo.png
   palette:
-    primary: light blue
+      scheme: preference
+      primary: indigo
+      accent: indigo
   features:
     - navigation.indexes
-    - navigation.tabs
     - navigation.instant
     - navigation.tabs.sticky
 
@@ -41,7 +42,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/zillionare
+      link: https://github.com/waynerv
       name: Github
     - icon: material/email
-      link: "mailto:code@jieyu.ai"
+      link: "mailto:code@gmail.com"

@@ -74,15 +74,15 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
    tests, including testing other Python versions, with tox:
 
 ```
-    $ tox
+$ tox
 ```
 
 7. Commit your changes and push your branch to GitHub:
 
 ```
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+$ git add .
+$ git commit -m "Your detailed description of your changes."
+$ git push origin name-of-your-bugfix-or-feature
 ```
 
 8. Submit a pull request through the GitHub website.
@@ -101,15 +101,9 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Tips
 
-{%- if cookiecutter.use_pytest == 'y' -%}
 ```
-    $ pytest tests.test_{{ cookiecutter.project_slug }}
+$ pytest tests.test_{{ cookiecutter.project_slug }}
 ```
-{%- else -%}
-```
-    $ python -m unittest tests.test_{{ cookiecutter.project_slug }}
-```
-{%- endif -%}
 
 To run a subset of tests.
 
@@ -126,4 +120,4 @@ $ git push
 $ git push --tags
 ```
 
-Travis will then deploy to PyPI if tests pass.
+GitHub Actions will then deploy to PyPI if tests pass.

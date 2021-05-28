@@ -1,19 +1,17 @@
 """Console script for {{cookiecutter.project_slug}}."""
 
-{% if cookiecutter.command_line_interface|lower == 'fire' -%}
-import fire
+{% if cookiecutter.command_line_interface|lower == 'click' -%}
+import click
 
-def help():
-    print("{{ cookiecutter.project_slug }}")
-    print("=" * len("{{ cookiecutter.project_slug }}"))
-    print("{{ cookiecutter.project_short_description }}")
 
+@click.command()
 def main():
-    fire.Fire({
-        "help": help
-    })
+    """Main entrypoint"""
+    click.echo("{{ cookiecutter.project_slug }}")
+    click.echo("=" * len("{{ cookiecutter.project_slug }}"))
+    click.echo("{{ cookiecutter.project_short_description }}")
 
 
 if __name__ == "__main__":
-    main() # pragma: no cover
+    main()  # pragma: no cover
 {%- endif %}

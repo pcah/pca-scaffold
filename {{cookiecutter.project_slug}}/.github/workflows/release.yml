@@ -6,7 +6,7 @@ name: release & publish workflow
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branch: release
+    branches: [ master, main ]
     tags:
       - 'v*'
 
@@ -39,6 +39,7 @@ jobs:
           prWoLabels: true
           unreleased: true
           addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
+          #sinceTag: v0.1.1
           output: CHANGELOG.md
 
       - uses: actions/setup-python@v2
@@ -80,7 +81,7 @@ jobs:
           draft: false
           prerelease: false
 
-      - name:
+      - name: publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
