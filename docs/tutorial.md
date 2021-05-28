@@ -135,7 +135,7 @@ cookiecutter.
 Then go to repo > settings > secrets, click on 'New repository secret', add the following
  secrets:
 
-- TEST_PYPI_API_TOKEN, see [How to apply testpypi token]
+- TEST_PYPI_API_TOKEN, see [How to apply TestPyPi token]
 - PYPI_API_TOKEN, see [How to apply pypi token]
 - PERSONAL_TOKEN, see [How to apply personal token]
 
