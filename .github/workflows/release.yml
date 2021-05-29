@@ -6,7 +6,6 @@ name: build & release
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master, main ]
     tags:
       - 'v*'
 
@@ -19,6 +18,7 @@ jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/master' }}
 
     strategy:
       matrix:
