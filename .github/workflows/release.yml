@@ -39,7 +39,7 @@ jobs:
           prWoLabels: true
           unreleased: true
           addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
-          sinceTag: v0.1.1
+          sinceTag: v1.0.1
           output: CHANGELOG.md
 
       - uses: actions/setup-python@v2
@@ -53,7 +53,7 @@ jobs:
 
       - name: pre-publish documentation
         run: |
-          poetry install -E dev
+          poetry install -E doc
           poetry run mkdocs build
 
       - name: publish documentation
