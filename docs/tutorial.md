@@ -153,6 +153,11 @@ In your browser, visit [install codecov app], you'll be landed at this page:
 Click on the green `install` button at top right, choose `all repositories` then click
 on `install` button, following directions until all set.
 
+If the repo you created is a private repo, you need to set the following additional secrets,
+which is not required for public repos:
+
+- CODECOV_TOKEN, see [Codecov GitHub Action - Usage](https://github.com/marketplace/actions/codecov?version=v1.5.2#usage)
+
 ## Step 7: Upload code to GitHub
 
 Back to your develop environment, find the folder named after the `project_slug`.

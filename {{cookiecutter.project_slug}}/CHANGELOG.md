@@ -1,4 +1,4 @@
-# History
+# Changelog
 
 ## {{ cookiecutter.version }} ({% now 'local' %})
 
