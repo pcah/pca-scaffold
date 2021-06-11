@@ -29,7 +29,7 @@
 
 ???+ Question
     # Why not read the docs?
-    Same reason as above. Git pages is convenient than read the docs, it requires no
+    Same reason as above. GitHub Pages is convenient than read the docs, it requires no
     further configuration, except access token. As to read the docs, you need to
     write v2 config file, plus several settings on web pages.
 
@@ -49,6 +49,20 @@
 
     The following appear in various parts of your generated project.
 
+    project_name
+    The name of your new Python package project. This is used in
+    documentation, so spaces and any characters are fine here.
+
+    project_slug
+    The name of your Python package for PyPI, also as the repository name of GitHub.
+    Typically, it is the slugified version of project_name.
+
+    pkg_name
+    The namespace of your Python package. This should be Python import-friendly.
+
+    project_short_description
+    A 1-sentence description of what your Python package does.
+
     full_name
     Your full name.
 
@@ -57,18 +71,6 @@
 
     github_username
     Your GitHub username.
-
-    project_name
-    The name of your new Python package project. This is used in
-    documentation, so spaces and any characters are fine here.
-
-    project_slug
-    The namespace of your Python package. This should be Python
-    import-friendly. Typically, it is the slugified version of
-    project_name.
-
-    project_short_description
-    A 1-sentence description of what your Python package does.
 
     pypi_username
     Your Python Package Index account username.

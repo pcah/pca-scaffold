@@ -3,12 +3,12 @@
 ??? Note
     Did you find this article confusing? [Edit this file] and pull a request!
 
-To start with, you will need [GitHub], [Pypi], [TestPyPi] and [Codecov] account. If
+To start with, you will need [GitHub], [PyPI], [TestPyPI] and [Codecov] account. If
 you don't have one, please follow the links to apply one before you get started on this
 tutorial.
 
 If you are new to Git and GitHub, you should probably spend a few minutes on
-some tutorials at the top of the page at [GitHub Help]
+some tutorials at the top of the page at [GitHub Help].
 
 ## Step 1: Install Cookiecutter
 
@@ -70,7 +70,7 @@ Go to this generated folder, the project layout should look like:
 
 ```
 
-Here the project_slug is `my_package`, when you generate yours, it could be other name.
+Here the project_slug is `my-package`, when you generate yours, it could be other name.
 
 Also be noticed that there's `pyproject.toml` in this folder. This is the main configuration file of our project.
 
@@ -128,14 +128,14 @@ You can also activate the virtual environment manually with `poetry shell`, this
 
 ## Step 5: Create a GitHub Repo
 
-Go to your GitHub account and create a new repo named `mypackage`, where
-`mypackage` matches the `project_slug` from your answers to running
+Go to your GitHub account and create a new repo named `my-package`, where
+`my-package` matches the `project_slug` from your answers to running
 cookiecutter.
 
 Then go to repo > settings > secrets, click on 'New repository secret', add the following
  secrets:
 
-- TEST_PYPI_API_TOKEN, see [How to apply TestPyPi token]
+- TEST_PYPI_API_TOKEN, see [How to apply TestPyPI token]
 - PYPI_API_TOKEN, see [How to apply pypi token]
 - PERSONAL_TOKEN, see [How to apply personal token]
 
@@ -160,17 +160,17 @@ Move into this folder, and then setup git to use your GitHub repo and upload the
 code:
 
 ``` bash
-cd mypackage
+cd my-package
 
 git add .
 git commit -m "Initial commit."
 git branch -M main
-git remote add origin git@github.com:myusername/mypackage.git
+git remote add origin git@github.com:myusername/my-package.git
 git push -u origin main
 ```
 
-Where `myusername` and `mypackage` are adjusted for your username and
-package name.
+Where `myusername` and `my-package` are adjusted for your username and
+repo name.
 
 You'll need a ssh key to push the repo. You can [Generate] a key or
 [Add] an existing one.
@@ -193,7 +193,7 @@ new artifact is published under the name `project_slug`.
 
 ## Step 8. Check documentation
 
-Documentation will be published and available at <https://{your_github_account}.github.io/{your_repo}> once:
+Documentation will be published and available at *https://{your_github_account}.github.io/{your_repo}* once:
 
 1. the branch is release
 2. the commit is tagged, and the tag name is started with 'v' (lower case)
@@ -205,13 +205,13 @@ If you'd like to see what it's look like now, you could run the following comman
 mkdocs gh-deploy
 ```
 
-then check your documentation at <https://{your_github_account}.github.io/{your_repo}>
+then check your documentation at *https://{your_github_account}.github.io/{your_repo}*
 
 ## Step 9. Make official release
 
   After done with your phased development, switch to release branch, following
-  instructions at [release checklist](/pypi_release_checklist), trigger first official release and check
-  result at [PYPI].
+  instructions at [release checklist](pypi_release_checklist.md), trigger first official release and check
+  result at [PyPI].
 
 
 [Edit this file]: https://github.com/waynerv/cookiecutter-pypackage/blob/master/docs/tutorial.md

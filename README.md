@@ -42,7 +42,7 @@ Generate a Python package project:
 cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
 ```
 
-Then follow **[Tutorial](https://waynerv.github.io/cookiecutter-pypackage/tutorial/)** to finish other configurations.
+Then follow **[Tutorial](docs/tutorial.md)** to finish other configurations.
 
 # Credits
 
