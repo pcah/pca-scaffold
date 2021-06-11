@@ -8,7 +8,7 @@ you don't have one, please follow the links to apply one before you get started 
 tutorial.
 
 If you are new to Git and GitHub, you should probably spend a few minutes on
-some of the tutorials at the top of the page at [GitHub Help]
+some tutorials at the top of the page at [GitHub Help]
 
 ## Step 1: Install Cookiecutter
 
@@ -28,10 +28,10 @@ Run the following command and feed with answers, If you don’t know what to ent
 cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
 ```
 
-Finally a new folder will be created under current folder, the name is the answer you
+Finally, a new folder will be created under current folder, the name is the answer you
 provided to `project_slug`.
 
-The project layout should looks like:
+Go to this generated folder, the project layout should look like:
 
 ```
 .
@@ -76,7 +76,7 @@ Also be noticed that there's `pyproject.toml` in this folder. This is the main c
 
 ## Step 3: Install Poetry
 
-We start with install Poetry, since the whole project is managed by it.
+In this step we will install Poetry if you are not using it, since the whole project is managed by it.
 
 ```bash
 pip install poetry
