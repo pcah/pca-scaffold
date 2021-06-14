@@ -32,7 +32,7 @@ repos:
     hooks:
       - id: mypy
         exclude: tests/
-        { % if cookiecutter.command_line_interface|lower == 'click' -% }
+        {% if cookiecutter.command_line_interface|lower == 'click' -%}
         additional_dependencies:
           - types-click
-        { %- endif % }
+        {%- endif %}
