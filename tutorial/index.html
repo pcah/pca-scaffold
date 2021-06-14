@@ -9,8 +9,10 @@
       
       
       
+        <link rel="canonical" href="https://www.waynerv.com/cookiecutter-pypackage/tutorial/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.8">
     
     
       
@@ -77,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Cookiecutter Pypackage" class="md-header-nav__button md-logo" aria-label="Cookiecutter Pypackage">
+    <a href="https://www.waynerv.com/cookiecutter-pypackage/" title="Cookiecutter Pypackage" class="md-header-nav__button md-logo" aria-label="Cookiecutter Pypackage">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -170,7 +172,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Cookiecutter Pypackage" class="md-nav__button md-logo" aria-label="Cookiecutter Pypackage">
+    <a href="https://www.waynerv.com/cookiecutter-pypackage/" title="Cookiecutter Pypackage" class="md-nav__button md-logo" aria-label="Cookiecutter Pypackage">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -533,11 +535,11 @@
                 <h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
 <details class="note"><summary>Note</summary><p>Did you find this article confusing? <a href="https://github.com/waynerv/cookiecutter-pypackage/blob/master/docs/tutorial.md">Edit this file</a> and pull a request!</p>
 </details>
-<p>To start with, you will need <a href="https://github.com/">GitHub</a>, <a href="https://pypi.org">Pypi</a>, <a href="https://test.pypi.org/">TestPyPi</a> and <a href="https://codecov.io/">Codecov</a> account. If
+<p>To start with, you will need <a href="https://github.com/">GitHub</a>, <a href="https://pypi.org">PyPI</a>, <a href="https://test.pypi.org/">TestPyPI</a> and <a href="https://codecov.io/">Codecov</a> account. If
 you don't have one, please follow the links to apply one before you get started on this
 tutorial.</p>
 <p>If you are new to Git and GitHub, you should probably spend a few minutes on
-some of the tutorials at the top of the page at <a href="https://help.github.com/">GitHub Help</a></p>
+some tutorials at the top of the page at <a href="https://help.github.com/">GitHub Help</a>.</p>
 <h3 id="step-1-install-cookiecutter">Step 1: Install Cookiecutter<a class="headerlink" href="#step-1-install-cookiecutter" title="Permanent link">&para;</a></h3>
 <p>Install cookiecutter:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install cookiecutter
@@ -549,9 +551,9 @@ some of the tutorials at the top of the page at <a href="https://help.github.com
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
 </code></pre></div>
 </td></tr></table>
-<p>Finally a new folder will be created under current folder, the name is the answer you
+<p>Finally, a new folder will be created under current folder, the name is the answer you
 provided to <code>project_slug</code>.</p>
-<p>The project layout should looks like:</p>
+<p>Go to this generated folder, the project layout should look like:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -584,45 +586,49 @@ provided to <code>project_slug</code>.</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>.
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>.
+├── .coveragerc
+├── .editorconfig
 ├── .github
-│   ├── workflows
-│   │   ├── dev.yml
-│   │   └── release.yml
-│   └── ISSUE_TEMPLATE.md
+│   ├── ISSUE_TEMPLATE.md
+│   └── workflows
+│       ├── dev.yml
+│       ├── preview.yml
+│       └── release.yml
+├── .gitignore
+├── .pre-commit-config.yaml
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
 ├── docs
 │   ├── api.md
+│   ├── changelog.md
 │   ├── contributing.md
-│   ├── history.md
 │   ├── index.md
 │   ├── installation.md
 │   └── usage.md
+├── makefile
+├── mkdocs.yml
+├── poetry.lock
+├── pyproject.toml
 ├── my_package
 │   ├── __init__.py
 │   ├── cli.py
 │   └── my_package.py
+├── setup.cfg
 ├── tests
 │   ├── __init__.py
 │   └── test_my_package.py
-├── .coveragerc
-├── .editorconfig
-├── .gitignore
-├── .pre-commit-config.yaml
-├── CONTRIBUTING.md
-├── HISTORY.md
-├── LICENSE
-├── README.md
-├── makefile
-├── mkdocs.yml
-├── pyproject.toml
-├── setup.cfg
 └── tox.ini
 </code></pre></div>
 </td></tr></table>
-<p>Here the project_slug is <code>my_package</code>, when you generate yours, it could be other name.</p>
+<p>Here the project_slug is <code>my-package</code>, when you generate yours, it could be other name.</p>
 <p>Also be noticed that there's <code>pyproject.toml</code> in this folder. This is the main configuration file of our project.</p>
 <h3 id="step-3-install-poetry">Step 3: Install Poetry<a class="headerlink" href="#step-3-install-poetry" title="Permanent link">&para;</a></h3>
-<p>We start with install Poetry, since the whole project is managed by it.</p>
+<p>In this step we will install Poetry if you are not using it, since the whole project is managed by it.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install poetry
 </code></pre></div>
 </td></tr></table>
@@ -659,13 +665,13 @@ machine. Otherwise, remove it from tox.ini and pyproject.toml (search python3.x 
 remove it).</p>
 </details>
 <h3 id="step-5-create-a-github-repo">Step 5: Create a GitHub Repo<a class="headerlink" href="#step-5-create-a-github-repo" title="Permanent link">&para;</a></h3>
-<p>Go to your GitHub account and create a new repo named <code>mypackage</code>, where
-<code>mypackage</code> matches the <code>project_slug</code> from your answers to running
+<p>Go to your GitHub account and create a new repo named <code>my-package</code>, where
+<code>my-package</code> matches the <code>project_slug</code> from your answers to running
 cookiecutter.</p>
 <p>Then go to repo &gt; settings &gt; secrets, click on 'New repository secret', add the following
  secrets:</p>
 <ul>
-<li>TEST_PYPI_API_TOKEN, see <a href="https://test.pypi.org/manage/account/">How to apply testpypi token</a></li>
+<li>TEST_PYPI_API_TOKEN, see <a href="https://test.pypi.org/manage/account/">How to apply TestPyPI token</a></li>
 <li>PYPI_API_TOKEN, see <a href="https://pypi.org/manage/account/">How to apply pypi token</a></li>
 <li>PERSONAL_TOKEN, see <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">How to apply personal token</a></li>
 </ul>
@@ -677,6 +683,11 @@ repositories, you can skip this step.</p>
 <p><img alt="" src="http://images.jieyu.ai/images/202104/20210419175222.png" /></p>
 <p>Click on the green <code>install</code> button at top right, choose <code>all repositories</code> then click
 on <code>install</code> button, following directions until all set.</p>
+<p>If the repo you created is a private repo, you need to set the following additional secrets,
+which is not required for public repos:</p>
+<ul>
+<li>CODECOV_TOKEN, see <a href="https://github.com/marketplace/actions/codecov?version=v1.5.2#usage">Codecov GitHub Action - Usage</a></li>
+</ul>
 <h3 id="step-7-upload-code-to-github">Step 7: Upload code to GitHub<a class="headerlink" href="#step-7-upload-code-to-github" title="Permanent link">&para;</a></h3>
 <p>Back to your develop environment, find the folder named after the <code>project_slug</code>.
 Move into this folder, and then setup git to use your GitHub repo and upload the
@@ -687,17 +698,17 @@ code:</p>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> mypackage
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> my-package
 
 git add .
 git commit -m <span class="s2">&quot;Initial commit.&quot;</span>
 git branch -M main
-git remote add origin git@github.com:myusername/mypackage.git
+git remote add origin git@github.com:myusername/my-package.git
 git push -u origin main
 </code></pre></div>
 </td></tr></table>
-<p>Where <code>myusername</code> and <code>mypackage</code> are adjusted for your username and
-package name.</p>
+<p>Where <code>myusername</code> and <code>my-package</code> are adjusted for your username and
+repo name.</p>
 <p>You'll need a ssh key to push the repo. You can <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generate</a> a key or
 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add</a> an existing one.</p>
 <details class="warning" open="open"><summary>Warning</summary><p>if you answered 'yes' to the question if install pre-commit hooks at last step,
@@ -705,27 +716,26 @@ then you should find pre-commit be invoked when you run <code>git commit</code>,
  may be modified by hooks. If so, please add these files and <strong>commit again</strong>.</p>
 </details>
 <h4 id="check-result">Check result<a class="headerlink" href="#check-result" title="Permanent link">&para;</a></h4>
-<p>After pushing your code to github, goto github web page, navigate to your repo, then
+<p>After pushing your code to GitHub, goto GitHub web page, navigate to your repo, then
 click on actions link, you should find screen like this:</p>
 <p><img alt="" src="http://images.jieyu.ai/images/202104/20210419170304.png" /></p>
-<p>There should be one workflow running. After it finished, go to <a href="https://test.pypi.org/">TestPyPI</a>, check if a
+<p>There should be some workflows running. After they finished, go to <a href="https://test.pypi.org/">TestPyPI</a>, check if a
 new artifact is published under the name <code>project_slug</code>.</p>
 <h3 id="step-8-check-documentation">Step 8. Check documentation<a class="headerlink" href="#step-8-check-documentation" title="Permanent link">&para;</a></h3>
-<p>Documentation will be published and available at <a href="https://{your_github_account}.github.io/{your_repo}">https://{your_github_account}.github.io/{your_repo}</a> once:</p>
+<p>Documentation will be published and available at <em>https://{your_github_account}.github.io/{your_repo}</em> once:</p>
 <ol>
-<li>the branch is release</li>
 <li>the commit is tagged, and the tag name is started with 'v' (lower case)</li>
 <li>build/testing executed by GitHub CI passed</li>
 </ol>
 <p>If you'd like to see what it's look like now, you could run the following command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdocs gh-deploy
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry run mkdocs serve
 </code></pre></div>
 </td></tr></table>
-<p>then check your documentation at <a href="https://{your_github_account}.github.io/{your_repo}">https://{your_github_account}.github.io/{your_repo}</a></p>
+<p>This will run the builtin development server for you to preview.</p>
 <h3 id="step-9-make-official-release">Step 9. Make official release<a class="headerlink" href="#step-9-make-official-release" title="Permanent link">&para;</a></h3>
-<p>After done with your phased development, switch to release branch, following
-  instructions at <a href="/pypi_release_checklist">release checklist</a>, trigger first official release and check
-  result at <a href="https://pypi.org">PYPI</a>.</p>
+<p>After done with your phased development in a feature branch, make a pull request, following
+  instructions at <a href="../pypi_release_checklist/">release checklist</a>, trigger first official release and check
+  result at <a href="https://pypi.org">PyPI</a>.</p>
                 
               
               
@@ -796,7 +806,7 @@ new artifact is published under the name <code>project_slug</code>.</p>
     
       
       
-      <a href="mailto:code@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+      <a href="mailto:ampedee@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8l-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/></svg>
       </a>
     

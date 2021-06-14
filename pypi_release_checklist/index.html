@@ -9,8 +9,10 @@
       
       
       
+        <link rel="canonical" href="https://www.waynerv.com/cookiecutter-pypackage/pypi_release_checklist/">
+      
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.8">
     
     
       
@@ -77,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Cookiecutter Pypackage" class="md-header-nav__button md-logo" aria-label="Cookiecutter Pypackage">
+    <a href="https://www.waynerv.com/cookiecutter-pypackage/" title="Cookiecutter Pypackage" class="md-header-nav__button md-logo" aria-label="Cookiecutter Pypackage">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -170,7 +172,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Cookiecutter Pypackage" class="md-nav__button md-logo" aria-label="Cookiecutter Pypackage">
+    <a href="https://www.waynerv.com/cookiecutter-pypackage/" title="Cookiecutter Pypackage" class="md-nav__button md-logo" aria-label="Cookiecutter Pypackage">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -426,24 +428,24 @@
 <h3 id="for-every-release">For Every Release<a class="headerlink" href="#for-every-release" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Check out release branch, merge all changes from master/main to release.</p>
+<p>Make some pull requests, merge all changes from feature branch to master/main.</p>
 </li>
 <li>
-<p>Update HISTORY.md.</p>
-<p>Be noticed that github workflow will generate a changelog for you automatically.</p>
+<p>Update CHANGELOG.md manually. Make sure it follows the <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a> standard.
+    Be noticed that GitHub workflow will read changelog and extract release notes automatically.</p>
 </li>
 <li>
-<p>Commit the changes:</p>
+<p>Commit the changelog changes:</p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git add HISTORY.md
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git add CHANGELOG.md
 git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;</span>
 </code></pre></div>
 </td></tr></table>
 </blockquote>
 </li>
 <li>
-<p>Update version number and automatically create commit,tag(can also be patch or major).</p>
+<p>Update version number and automatically create a commit, tag(can also be patch or major).</p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry run bump2version minor
 </code></pre></div>
@@ -451,7 +453,7 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 </blockquote>
 </li>
 <li>
-<p>Run the tests:</p>
+<p>Run the tests locally for insurance:</p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>poetry run tox
 </code></pre></div>
@@ -459,23 +461,22 @@ git commit -m <span class="s2">&quot;Changelog for upcoming release 0.1.1.&quot;
 </blockquote>
 </li>
 <li>
-<p>Push the commit to release branch:</p>
+<p>Push these commits to master/main:</p>
 <blockquote>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push
 </code></pre></div>
 </td></tr></table>
 </blockquote>
+<p>Before proceeding to the next step, please check workflows triggered by this push have passed.</p>
 </li>
 <li>
-<p>Push the tags, creating the new release on both GitHub and PyPI:</p>
+<p>Push the tags(created by bump2version) to master/main, creating the new release on both GitHub and PyPI:</p>
 <blockquote>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git tag %tag_name%
-git push --tags
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push --tags
 </code></pre></div>
 </td></tr></table>
 </blockquote>
-<p>tag_name has to be started with 'v'(lower case), to leverage GitHub release workflow.</p>
+<p>Only tag name started with 'v'(lower case) will leverage GitHub release workflow.</p>
 </li>
 <li>
 <p>Check the PyPI listing page to make sure that the README, release
@@ -484,11 +485,7 @@ git push --tags
 </li>
 </ol>
 <h3 id="about-this-checklist">About This Checklist<a class="headerlink" href="#about-this-checklist" title="Permanent link">&para;</a></h3>
-<p>This checklist is adapted from:</p>
-<ul>
-<li><a href="https://gist.github.com/audreyr/5990987">https://gist.github.com/audreyr/5990987</a></li>
-<li><a href="https://gist.github.com/audreyr/9f1564ea049c14f682f4">https://gist.github.com/audreyr/9f1564ea049c14f682f4</a></li>
-</ul>
+<p>This checklist is adapted from <a href="https://cookiecutter-pypackage.readthedocs.io/en/latest/pypi_release_checklist.html">https://cookiecutter-pypackage.readthedocs.io/en/latest/pypi_release_checklist.html</a>.</p>
 <p>It assumes that you are using all features of Cookiecutter PyPackage.</p>
                 
               
@@ -560,7 +557,7 @@ git push --tags
     
       
       
-      <a href="mailto:code@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+      <a href="mailto:ampedee@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8l-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z"/></svg>
       </a>
     
