@@ -6,45 +6,45 @@ You better visit PyPI to make sure your package name is unused.
 
 ## For Every Release
 
-0.  Check out release branch, merge all changes from master/main to release.
+0.  Make some pull requests, merge all changes from feature branch to master/main.
 
-1.  Update HISTORY.md.
+1.  Update CHANGELOG.md manually. Make sure it follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard.
+    Be noticed that GitHub workflow will read changelog and extract release notes automatically.
 
-    Be noticed that github workflow will generate a changelog for you automatically.
-
-2.  Commit the changes:
+2.  Commit the changelog changes:
 
     > ``` bash
-    > git add HISTORY.md
+    > git add CHANGELOG.md
     > git commit -m "Changelog for upcoming release 0.1.1."
     > ```
 
-3.  Update version number and automatically create commit,tag(can also be patch or major).
+3.  Update version number and automatically create a commit, tag(can also be patch or major).
 
     > ``` bash
     > poetry run bump2version minor
     > ```
 
-4.  Run the tests:
+4.  Run the tests locally for insurance:
 
     > ``` bash
     > poetry run tox
     > ```
 
-5.  Push the commit to release branch:
+5.  Push these commits to master/main:
 
     > ``` bash
     > git push
     > ```
 
-6.  Push the tags, creating the new release on both GitHub and PyPI:
+    Before proceeding to the next step, please check workflows triggered by this push have passed.
+
+6.  Push the tags(created by bump2version) to master/main, creating the new release on both GitHub and PyPI:
 
     > ``` bash
-    > git tag %tag_name%
     > git push --tags
     > ```
 
-    tag_name has to be started with 'v'(lower case), to leverage GitHub release workflow.
+    Only tag name started with 'v'(lower case) will leverage GitHub release workflow.
 
 7.  Check the PyPI listing page to make sure that the README, release
     notes, and roadmap display properly. If tox test passed, this should be ok, since
@@ -52,9 +52,6 @@ You better visit PyPI to make sure your package name is unused.
 
 ## About This Checklist
 
-This checklist is adapted from:
-
--   <https://gist.github.com/audreyr/5990987>
--   <https://gist.github.com/audreyr/9f1564ea049c14f682f4>
+This checklist is adapted from <https://cookiecutter-pypackage.readthedocs.io/en/latest/pypi_release_checklist.html>.
 
 It assumes that you are using all features of Cookiecutter PyPackage.

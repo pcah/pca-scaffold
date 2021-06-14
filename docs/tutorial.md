@@ -35,37 +35,39 @@ Go to this generated folder, the project layout should look like:
 
 ```
 .
+├── .coveragerc
+├── .editorconfig
 ├── .github
-│   ├── workflows
-│   │   ├── dev.yml
-│   │   └── release.yml
-│   └── ISSUE_TEMPLATE.md
+│   ├── ISSUE_TEMPLATE.md
+│   └── workflows
+│       ├── dev.yml
+│       ├── preview.yml
+│       └── release.yml
+├── .gitignore
+├── .pre-commit-config.yaml
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
 ├── docs
 │   ├── api.md
+│   ├── changelog.md
 │   ├── contributing.md
-│   ├── history.md
 │   ├── index.md
 │   ├── installation.md
 │   └── usage.md
+├── makefile
+├── mkdocs.yml
+├── poetry.lock
+├── pyproject.toml
 ├── my_package
 │   ├── __init__.py
 │   ├── cli.py
 │   └── my_package.py
+├── setup.cfg
 ├── tests
 │   ├── __init__.py
 │   └── test_my_package.py
-├── .coveragerc
-├── .editorconfig
-├── .gitignore
-├── .pre-commit-config.yaml
-├── CONTRIBUTING.md
-├── HISTORY.md
-├── LICENSE
-├── README.md
-├── makefile
-├── mkdocs.yml
-├── pyproject.toml
-├── setup.cfg
 └── tox.ini
 
 ```
@@ -188,33 +190,32 @@ You'll need a ssh key to push the repo. You can [Generate] a key or
 
 ### Check result
 
-After pushing your code to github, goto github web page, navigate to your repo, then
+After pushing your code to GitHub, goto GitHub web page, navigate to your repo, then
 click on actions link, you should find screen like this:
 
 ![](http://images.jieyu.ai/images/202104/20210419170304.png)
 
-There should be one workflow running. After it finished, go to [TestPyPI], check if a
+There should be some workflows running. After they finished, go to [TestPyPI], check if a
 new artifact is published under the name `project_slug`.
 
 ## Step 8. Check documentation
 
 Documentation will be published and available at *https://{your_github_account}.github.io/{your_repo}* once:
 
-1. the branch is release
-2. the commit is tagged, and the tag name is started with 'v' (lower case)
-3. build/testing executed by GitHub CI passed
+1. the commit is tagged, and the tag name is started with 'v' (lower case)
+2. build/testing executed by GitHub CI passed
 
 If you'd like to see what it's look like now, you could run the following command:
 
 ```
-mkdocs gh-deploy
+poetry run mkdocs serve
 ```
 
-then check your documentation at *https://{your_github_account}.github.io/{your_repo}*
+This will run the builtin development server for you to preview.
 
 ## Step 9. Make official release
 
-  After done with your phased development, switch to release branch, following
+  After done with your phased development in a feature branch, make a pull request, following
   instructions at [release checklist](pypi_release_checklist.md), trigger first official release and check
   result at [PyPI].
 

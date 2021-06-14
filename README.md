@@ -22,10 +22,11 @@ This tool will create Python project with the following features:
 * [Pre-commit hooks](https://pre-commit.com/): Formatting/linting anytime when commit/run local tox/CI
 * [Mkdocstrings](https://mkdocstrings.github.io/): Auto API doc generation
 * Command line interface using [Click](https://click.palletsprojects.com/en/8.0.x/) (optional)
+* [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping with a single command
 * Continuous Integration/Deployment by [GitHub actions](https://github.com/features/actions), includes:
     - publish dev build/official release to TestPyPI/PyPI automatically when CI success
     - publish documents automatically when CI success
-    - extract change log from GitHub and integrate with release notes automatically
+    - extract change log from CHANGELOG and integrate with release notes automatically
 * Host your documentation from [GitHub Pages](https://pages.github.com) with zero-config
 
 ## Quickstart
@@ -47,12 +48,3 @@ Then follow **[Tutorial](docs/tutorial.md)** to finish other configurations.
 # Credits
 
 This repo is forked from [zillionare/cookiecutter-pypackage](https://github.com/zillionare/cookiecutter-pypackage/), which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
-
-# Todo
-
-[x] add makefile
-[x] resolve pre-commit fail
-[x] add bump2version
-[ ] add flake8 rst docstring support
-[ ] a better README template
-[ ] improve docs

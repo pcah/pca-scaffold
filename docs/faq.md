@@ -1,26 +1,11 @@
 ???+ Question
-    # Why github workflow `release & publish` failed?
-    We have used a github action `heinrichreimer/github-changelog-generator-action` to
-    generate change log automatically for your project. However, this action requires
-    some configuration.
+    # Explain these GitHub workflows yaml files?
+    - `dev.yml`: define dev workflow, run on every push and pull requests to master,
+    basically run all the tests against multiple versions and platforms.
+    - `preview.yml`: define stage & preview workflow, run on every push to master, publish dev build to TestPyPI.
+    - `release.yml`: define release & publish workflow, run on every tag push, create GitHub release,
+    publish docs to GitHub Pages and built package to PyPI.
 
-    Goto .github/workflows/release.yml (in your project folder), find the following:
-    ```
-        - name: generate change log
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issues: true
-          issuesWoLabels: true
-          pullRequests: true
-          prWoLabels: true
-          unreleased: true
-          addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
-          #sinceTag: v0.1.1
-          output: CHANGELOG.md
-    ```
-    uncomment `#sinceTag` line and given an existed tag name in your project. If
-    there's none, you have to create one now.
 
 ???+ Question
     # Why not travis CI?
