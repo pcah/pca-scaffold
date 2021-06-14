@@ -3,12 +3,12 @@
 ??? Note
     Did you find this article confusing? [Edit this file] and pull a request!
 
-To start with, you will need [GitHub], [Pypi], [TestPyPi] and [Codecov] account. If
+To start with, you will need [GitHub], [PyPI], [TestPyPI] and [Codecov] account. If
 you don't have one, please follow the links to apply one before you get started on this
 tutorial.
 
 If you are new to Git and GitHub, you should probably spend a few minutes on
-some of the tutorials at the top of the page at [GitHub Help]
+some tutorials at the top of the page at [GitHub Help].
 
 ## Step 1: Install Cookiecutter
 
@@ -28,55 +28,57 @@ Run the following command and feed with answers, If you don’t know what to ent
 cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
 ```
 
-Finally a new folder will be created under current folder, the name is the answer you
+Finally, a new folder will be created under current folder, the name is the answer you
 provided to `project_slug`.
 
-The project layout should looks like:
+Go to this generated folder, the project layout should look like:
 
 ```
 .
+├── .coveragerc
+├── .editorconfig
 ├── .github
-│   ├── workflows
-│   │   ├── dev.yml
-│   │   └── release.yml
-│   └── ISSUE_TEMPLATE.md
+│   ├── ISSUE_TEMPLATE.md
+│   └── workflows
+│       ├── dev.yml
+│       ├── preview.yml
+│       └── release.yml
+├── .gitignore
+├── .pre-commit-config.yaml
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
 ├── docs
 │   ├── api.md
+│   ├── changelog.md
 │   ├── contributing.md
-│   ├── history.md
 │   ├── index.md
 │   ├── installation.md
 │   └── usage.md
+├── makefile
+├── mkdocs.yml
+├── poetry.lock
+├── pyproject.toml
 ├── my_package
 │   ├── __init__.py
 │   ├── cli.py
 │   └── my_package.py
+├── setup.cfg
 ├── tests
 │   ├── __init__.py
 │   └── test_my_package.py
-├── .coveragerc
-├── .editorconfig
-├── .gitignore
-├── .pre-commit-config.yaml
-├── CONTRIBUTING.md
-├── HISTORY.md
-├── LICENSE
-├── README.md
-├── makefile
-├── mkdocs.yml
-├── pyproject.toml
-├── setup.cfg
 └── tox.ini
 
 ```
 
-Here the project_slug is `my_package`, when you generate yours, it could be other name.
+Here the project_slug is `my-package`, when you generate yours, it could be other name.
 
 Also be noticed that there's `pyproject.toml` in this folder. This is the main configuration file of our project.
 
 ## Step 3: Install Poetry
 
-We start with install Poetry, since the whole project is managed by it.
+In this step we will install Poetry if you are not using it, since the whole project is managed by it.
 
 ```bash
 pip install poetry
@@ -128,14 +130,14 @@ You can also activate the virtual environment manually with `poetry shell`, this
 
 ## Step 5: Create a GitHub Repo
 
-Go to your GitHub account and create a new repo named `mypackage`, where
-`mypackage` matches the `project_slug` from your answers to running
+Go to your GitHub account and create a new repo named `my-package`, where
+`my-package` matches the `project_slug` from your answers to running
 cookiecutter.
 
 Then go to repo > settings > secrets, click on 'New repository secret', add the following
  secrets:
 
-- TEST_PYPI_API_TOKEN, see [How to apply TestPyPi token]
+- TEST_PYPI_API_TOKEN, see [How to apply TestPyPI token]
 - PYPI_API_TOKEN, see [How to apply pypi token]
 - PERSONAL_TOKEN, see [How to apply personal token]
 
@@ -153,6 +155,11 @@ In your browser, visit [install codecov app], you'll be landed at this page:
 Click on the green `install` button at top right, choose `all repositories` then click
 on `install` button, following directions until all set.
 
+If the repo you created is a private repo, you need to set the following additional secrets,
+which is not required for public repos:
+
+- CODECOV_TOKEN, see [Codecov GitHub Action - Usage](https://github.com/marketplace/actions/codecov?version=v1.5.2#usage)
+
 ## Step 7: Upload code to GitHub
 
 Back to your develop environment, find the folder named after the `project_slug`.
@@ -160,17 +167,17 @@ Move into this folder, and then setup git to use your GitHub repo and upload the
 code:
 
 ``` bash
-cd mypackage
+cd my-package
 
 git add .
 git commit -m "Initial commit."
 git branch -M main
-git remote add origin git@github.com:myusername/mypackage.git
+git remote add origin git@github.com:myusername/my-package.git
 git push -u origin main
 ```
 
-Where `myusername` and `mypackage` are adjusted for your username and
-package name.
+Where `myusername` and `my-package` are adjusted for your username and
+repo name.
 
 You'll need a ssh key to push the repo. You can [Generate] a key or
 [Add] an existing one.
@@ -183,35 +190,34 @@ You'll need a ssh key to push the repo. You can [Generate] a key or
 
 ### Check result
 
-After pushing your code to github, goto github web page, navigate to your repo, then
+After pushing your code to GitHub, goto GitHub web page, navigate to your repo, then
 click on actions link, you should find screen like this:
 
 ![](http://images.jieyu.ai/images/202104/20210419170304.png)
 
-There should be one workflow running. After it finished, go to [TestPyPI], check if a
+There should be some workflows running. After they finished, go to [TestPyPI], check if a
 new artifact is published under the name `project_slug`.
 
 ## Step 8. Check documentation
 
-Documentation will be published and available at <https://{your_github_account}.github.io/{your_repo}> once:
+Documentation will be published and available at *https://{your_github_account}.github.io/{your_repo}* once:
 
-1. the branch is release
-2. the commit is tagged, and the tag name is started with 'v' (lower case)
-3. build/testing executed by GitHub CI passed
+1. the commit is tagged, and the tag name is started with 'v' (lower case)
+2. build/testing executed by GitHub CI passed
 
 If you'd like to see what it's look like now, you could run the following command:
 
 ```
-mkdocs gh-deploy
+poetry run mkdocs serve
 ```
 
-then check your documentation at <https://{your_github_account}.github.io/{your_repo}>
+This will run the builtin development server for you to preview.
 
 ## Step 9. Make official release
 
-  After done with your phased development, switch to release branch, following
-  instructions at [release checklist](/pypi_release_checklist), trigger first official release and check
-  result at [PYPI].
+  After done with your phased development in a feature branch, make a pull request, following
+  instructions at [release checklist](pypi_release_checklist.md), trigger first official release and check
+  result at [PyPI].
 
 
 [Edit this file]: https://github.com/waynerv/cookiecutter-pypackage/blob/master/docs/tutorial.md

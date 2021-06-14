@@ -5,7 +5,7 @@ Optionally, your package can include a console script using [Click].
 # How It Works
 
 If the `command_line_interface` option is set to `click` during setup, cookiecutter
- will add a file `cli.py` in the `project_slug` subdirectory. An entry point is added to
+ will add a file `cli.py` in the `pkg_name` subdirectory. An entry point is added to
 `pyproject.toml` that points to the main function in cli.py.
 
 # Usage
@@ -18,7 +18,7 @@ poetry install
 
 Then execute:
 ```
-$your_package_name --help
+$project_slug --help
 ```
 
 it will show your package name, project short description and exit.

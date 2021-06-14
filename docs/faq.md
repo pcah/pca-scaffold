@@ -1,26 +1,11 @@
 ???+ Question
-    # Why github workflow `release & publish` failed?
-    We have used a github action `heinrichreimer/github-changelog-generator-action` to
-    generate change log automatically for your project. However, this action requires
-    some configuration.
+    # Explain these GitHub workflows yaml files?
+    - `dev.yml`: define dev workflow, run on every push and pull requests to master,
+    basically run all the tests against multiple versions and platforms.
+    - `preview.yml`: define stage & preview workflow, run on every push to master, publish dev build to TestPyPI.
+    - `release.yml`: define release & publish workflow, run on every tag push, create GitHub release,
+    publish docs to GitHub Pages and built package to PyPI.
 
-    Goto .github/workflows/release.yml (in your project folder), find the following:
-    ```
-        - name: generate change log
-        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issues: true
-          issuesWoLabels: true
-          pullRequests: true
-          prWoLabels: true
-          unreleased: true
-          addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
-          #sinceTag: v0.1.1
-          output: CHANGELOG.md
-    ```
-    uncomment `#sinceTag` line and given an existed tag name in your project. If
-    there's none, you have to create one now.
 
 ???+ Question
     # Why not travis CI?
@@ -29,7 +14,7 @@
 
 ???+ Question
     # Why not read the docs?
-    Same reason as above. Git pages is convenient than read the docs, it requires no
+    Same reason as above. GitHub Pages is convenient than read the docs, it requires no
     further configuration, except access token. As to read the docs, you need to
     write v2 config file, plus several settings on web pages.
 
@@ -49,6 +34,20 @@
 
     The following appear in various parts of your generated project.
 
+    project_name
+    The name of your new Python package project. This is used in
+    documentation, so spaces and any characters are fine here.
+
+    project_slug
+    The name of your Python package for PyPI, also as the repository name of GitHub.
+    Typically, it is the slugified version of project_name.
+
+    pkg_name
+    The namespace of your Python package. This should be Python import-friendly.
+
+    project_short_description
+    A 1-sentence description of what your Python package does.
+
     full_name
     Your full name.
 
@@ -57,18 +56,6 @@
 
     github_username
     Your GitHub username.
-
-    project_name
-    The name of your new Python package project. This is used in
-    documentation, so spaces and any characters are fine here.
-
-    project_slug
-    The namespace of your Python package. This should be Python
-    import-friendly. Typically, it is the slugified version of
-    project_name.
-
-    project_short_description
-    A 1-sentence description of what your Python package does.
 
     pypi_username
     Your Python Package Index account username.

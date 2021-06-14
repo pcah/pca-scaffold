@@ -102,7 +102,7 @@ Before you submit a pull request, check that it meets these guidelines:
 ## Tips
 
 ```
-$ poetry run pytest tests/test_{{ cookiecutter.project_slug }}.py
+$ poetry run pytest tests/test_{{ cookiecutter.pkg_name }}.py
 ```
 
 To run a subset of tests.

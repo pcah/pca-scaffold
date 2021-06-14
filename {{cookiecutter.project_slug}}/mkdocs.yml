@@ -1,5 +1,5 @@
 site_name: {{ cookiecutter.project_name }}
-# site_url: http://www.jieyu.ai
+site_url: https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}
 repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 repo_name: {{ cookiecutter.project_slug }}
 #strict: true
@@ -9,7 +9,7 @@ nav:
   - Usage: usage.md
   - Modules: api.md
   - Contributing: contributing.md
-  - History: history.md
+  - Changelog: changelog.md
 theme:
   name: material
   language: en
