@@ -6,16 +6,17 @@ conform to best practice.
 [![CI Status](https://github.com/waynerv/cookiecutter-pypackage/actions/workflows/dev.yml/badge.svg)](https://github.com/waynerv/cookiecutter-pypackage/actions/workflows/dev.yml)
 [![License](https://img.shields.io/pypi/l/ppw)](https://opensource.org/licenses/BSD-2-Clause)
 
+* Documentation: <https://waynerv.github.io/cookiecutter-pypackage>
 
 ## Features
 
 This tool will create Python project with the following features:
 
-* [Poetry](https://python-poetry.org/): Manage version, dependancy, build and release
-* [Mkdocs](https://www.mkdocs.org): Writting your docs in markdown style
+* [Poetry](https://python-poetry.org/): Manage dependency, build and release
+* [Mkdocs](https://www.mkdocs.org): Writing your docs in markdown style
 * Testing with [Pytest](https://pytest.org) (unittest is still supported out of the box)
 * Code coverage report and endorsed by [Codecov](https://codecov.io)
-* [Tox](https://tox.readthedocs.io): Test your code against environment matrix, lint and artifact check.
+* [Tox](https://tox.readthedocs.io): Test your code against environment matrix, lint and artifact check
 * Format with [Black](https://github.com/psf/black) and [Isort](https://github.com/PyCQA/isort)
 * Lint code with [Flake8](https://flake8.pycqa.org) and [Flake8-docstrings](https://pypi.org/project/flake8-docstrings/)
 * Check static type with [Mypy](http://mypy-lang.org/)
@@ -26,7 +27,7 @@ This tool will create Python project with the following features:
 * Continuous Integration/Deployment by [GitHub actions](https://github.com/features/actions), includes:
     - publish dev build/official release to TestPyPI/PyPI automatically when CI success
     - publish documents automatically when CI success
-    - extract change log from CHANGELOG and integrate with release notes automatically
+    - extract changelog from CHANGELOG and integrate with release notes automatically
 * Host your documentation from [GitHub Pages](https://pages.github.com) with zero-config
 
 ## Quickstart
