@@ -1,7 +1,7 @@
 site_name: {{ cookiecutter.project_name }}
 site_url: https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}
 repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
-repo_name: {{ cookiecutter.project_slug }}
+repo_name: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 #strict: true
 nav:
   - Home: index.md

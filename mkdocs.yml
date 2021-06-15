@@ -1,7 +1,7 @@
 site_name: Cookiecutter Pypackage
 site_url: https://www.waynerv.com/cookiecutter-pypackage
 repo_url: https://github.com/waynerv/cookiecutter-pypackage
-repo_name: cookiecutter-pypackage
+repo_name: waynerv/cookiecutter-pypackage
 nav:
   - Introduction: index.md
   - Tutorial: tutorial.md
