@@ -37,6 +37,7 @@ markdown_extensions:
   - pymdownx.highlight:
       linenums: false
   - pymdownx.superfences
+  - pymdownx.inlinehilite
   - pymdownx.details
   - admonition
   - toc:
