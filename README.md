@@ -19,8 +19,8 @@ This tool will create Python project with the following features:
 * [Tox](https://tox.readthedocs.io): Test your code against environment matrix, lint and artifact check
 * Format with [Black](https://github.com/psf/black) and [Isort](https://github.com/PyCQA/isort)
 * Lint code with [Flake8](https://flake8.pycqa.org) and [Flake8-docstrings](https://pypi.org/project/flake8-docstrings/)
-* Check static type with [Mypy](http://mypy-lang.org/)
-* [Pre-commit hooks](https://pre-commit.com/): Formatting/linting anytime when commit/run local tox/CI
+* Check static type with [Mypy](http://mypy-lang.org/) (optional)
+* [Pre-commit hooks](https://pre-commit.com/): Formatting/linting anytime when commit your code
 * [Mkdocstrings](https://mkdocstrings.github.io/): Auto API doc generation
 * Command line interface using [Click](https://click.palletsprojects.com/en/8.0.x/) (optional)
 * [bump2version](https://github.com/c4urself/bump2version): Pre-configured version bumping with a single command

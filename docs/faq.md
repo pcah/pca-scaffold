@@ -63,6 +63,9 @@
     version
     The starting version number of the package.
 
+    use_mypy
+    If use mypy for static type check in pre-commit hooks and tox.
+
     install_precommit_hooks
     If you choose yes, then cookiecutter will install pre-commit hooks for you.
 
