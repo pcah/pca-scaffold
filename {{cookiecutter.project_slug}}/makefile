@@ -1,27 +1,29 @@
 sources = {{ cookiecutter.pkg_name }}
 
-.PHONY: test lint unittest coverage check pre-commit clean
-test: lint check unittest
+.PHONY: test format lint unittest coverage pre-commit clean
+test: format lint unittest
 
-lint:
+format:
 	isort $(sources) tests
 	black $(sources) tests
-	flake8 $(sources) tests
 
-check:
-	mypy $(sources)
+lint:
+	flake8 $(sources) tests
+	{%- if cookiecutter.use_mypy == 'y' %}
+	mypy $(sources) tests
+	{%- endif %}
 
 unittest:
 	pytest
 
 coverage:
-	pytest --cov=$(sources) --cov-branch --cov-report term-missing
+	pytest -s --cov=$(sources) --cov-append --cov-report term-missing tests
 
 pre-commit:
 	pre-commit run --all-files
 
 clean:
-	rm -rf .mypy_cache .pytest_cache
+	rm -rf {% if cookiecutter.use_mypy == 'y' -%}.mypy_cache {% endif -%} .pytest_cache
 	rm -rf *.egg-info
 	rm -rf .tox dist site
 	rm -rf coverage.xml .coverage
