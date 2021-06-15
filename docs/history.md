@@ -1,4 +1,10 @@
-# v1.0
+# History
+
+## v1.1.0
+
+* Add `use_mypy` choice to make mypy optional
+
+## v1.0
 ***first release with the following features:***
 
 * [Poetry](https://python-poetry.org/): Manage dependency, build and release
