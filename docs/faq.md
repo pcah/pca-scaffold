@@ -57,9 +57,6 @@
     github_username
     Your GitHub username.
 
-    pypi_username
-    Your Python Package Index account username.
-
     version
     The starting version number of the package.
 

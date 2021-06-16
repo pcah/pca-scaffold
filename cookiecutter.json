@@ -6,7 +6,6 @@
   "full_name": "Xie Wei",
   "email": "ampedee@gmail.com",
   "github_username": "waynerv",
-  "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.1.0",
   "command_line_interface": ["Click", "No command-line interface"],
   "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-only", "Not open source"],
