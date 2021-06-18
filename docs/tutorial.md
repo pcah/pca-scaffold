@@ -35,7 +35,7 @@ Go to this generated folder, the project layout should look like:
 
 ```
 .
-├── .coveragerc
+├── .bumpversion.cfg
 ├── .editorconfig
 ├── .github
 │   ├── ISSUE_TEMPLATE.md
@@ -58,17 +58,15 @@ Go to this generated folder, the project layout should look like:
 │   └── usage.md
 ├── makefile
 ├── mkdocs.yml
-├── poetry.lock
-├── pyproject.toml
 ├── my_package
 │   ├── __init__.py
 │   ├── cli.py
 │   └── my_package.py
+├── pyproject.toml
 ├── setup.cfg
-├── tests
-│   ├── __init__.py
-│   └── test_my_package.py
-└── tox.ini
+└── tests
+    ├── __init__.py
+    └── test_my_package.py
 
 ```
 
