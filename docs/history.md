@@ -1,5 +1,9 @@
 # History
 
+## v1.1.1
+
+* Centralize most of the tool configuration in the `setup.cfg` file
+
 ## v1.1.0
 
 * Add `use_mypy` choice to make mypy optional
