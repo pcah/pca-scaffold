@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/console_script_setup/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/faq/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/history/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/pypi_release_checklist/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.waynerv.com/cookiecutter-pypackage/tutorial/</loc>
-         <lastmod>2021-06-15</lastmod>
+         <lastmod>2021-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
