@@ -1,16 +1,15 @@
 ???+ Question
-    # Explain these GitHub workflows yaml files?
+    # Explain these GitHub workflows `.yml` files?
     - `dev.yml`: define dev workflow, run on every push and pull requests to master,
     basically run all the tests against multiple versions and platforms.
     - `preview.yml`: define stage & preview workflow, run on every push to master, publish dev build to TestPyPI.
     - `release.yml`: define release & publish workflow, run on every tag push, create GitHub release,
     publish docs to GitHub Pages and built package to PyPI.
 
-
 ???+ Question
     # Why not travis CI?
-    Travis CI is a great service, however, github actions is super convenient, less configuration
-    , better integration. Less configuration, less error prone.
+    Travis CI is a great service, however, GitHub actions is super convenient, less configuration,
+    better integration. Less configuration, less error prone.
 
 ???+ Question
     # Why not read the docs?
@@ -20,14 +19,16 @@
 
 ???+ Question
     # Why mkdocs over sphinx?
-    reStructured Text and Sphinx is way to tedious, though powerful. With extension,
+    reStructured Text and Sphinx is way too tedious, though powerful. With extension,
     you'll find almost all features are available in mkdocs, in a neat and productive
     way. Poetry and Markdown, are the two key factors driven me develop this template.
 
 ???+ Question
     # What are the configuration items?
 
-    Here is a list:
+    [TBDL]
+
+    <!-- Here is a list:
 
     ```
     ## Templated Values
@@ -54,7 +55,7 @@
     email
     Your email address.
 
-    github_username
+    GitHub_username
     Your GitHub username.
 
     version
@@ -85,4 +86,4 @@
 
     - PERSONAL_TOKEN (required for publishing document to git pages)
     - TEST_PYPI_API_TOKEN (required for publishing dev release to testpypi)
-    - PYPI_API_TOKEN (required for publish )
+    - PYPI_API_TOKEN (required for publish ) -->

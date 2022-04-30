@@ -1,5 +1,5 @@
-* Date you used Cookiecutter PyPackage:
-* Cookiecutter version used, if any:
+* Date you used pca-scaffold:
+* pca-scaffold version used, if any:
 * Python version, if any:
 * Operating System:
 
@@ -9,6 +9,6 @@ Describe what you were trying to get done. Tell us what happened, what went wron
 
 ### What I Did
 
-```
+```text
 Paste the command(s) you ran and the output.
 ```

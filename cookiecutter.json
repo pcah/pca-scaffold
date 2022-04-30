@@ -1,16 +1,39 @@
 {
-  "project_name": "Python Boilerplate",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-  "pkg_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "Skeleton project created by Cookiecutter PyPackage",
-  "full_name": "Xie Wei",
-  "email": "ampedee@gmail.com",
-  "github_username": "waynerv",
-  "version": "0.1.0",
-  "command_line_interface": ["Click", "No command-line interface"],
-  "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-only", "Not open source"],
-  "docstrings_style": ["google", "numpy", "pep257"],
-  "use_mypy": "y",
-  "install_precommit_hooks": "y",
-  "_copy_without_render": ["docs/changelog.md", "docs/contributing.md", "docs/index.md", ".github/workflows/*.yml"]
+    "project_own_name": "scaffold",
+    "package_own_name": "{{cookiecutter.project_own_name.lower().replace(' ', '_').replace('-', '_')}}",
+    "project_name": "pca-{{cookiecutter.project_own_name.lower().replace(' ', '-').replace('_', '-')}}",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "pkg_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "Skeleton project for python-clean-architecture package",
+    "full_name": "Łukasz Haze",
+    "email": "github@lhaze.name",
+    "github_username": "lhaze",
+    "version": "0.0.1",
+    "command_line_interface": [
+        "Click",
+        "No command-line interface"
+    ],
+    "open_source_license": [
+        "MIT",
+        "BSD-3-Clause",
+        "ISC",
+        "Apache-2.0",
+        "GPL-3.0-only",
+        "Not open source"
+    ],
+    "docstrings_style": [
+        "google",
+        "numpy",
+        "pep257"
+    ],
+    "use_mypy": "y",
+    "install_precommit_hooks": "y",
+    "_copy_without_render": [
+        "docs/changelog.md",
+        "docs/contributing.md",
+        "docs/index.md",
+        ".github/workflows/*.yml"
+    ],
+    "heading_description": "{{cookiecutter.short_description}} for python-clean-architecture.",
+    "readme_description": "helping to define {{cookiecutter.short_description[0].lower()}}{{cookiecutter.short_description[1:]}}."
 }

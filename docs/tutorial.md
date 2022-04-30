@@ -25,7 +25,7 @@ Now it's time to generate your Python package.
 Run the following command and feed with answers, If you don’t know what to enter, stick with the defaults:
 
 ```bash
-cookiecutter https://github.com/waynerv/cookiecutter-pypackage.git
+cookiecutter https://github.com/pcah/pca-scaffold.git
 ```
 
 Finally, a new folder will be created under current folder, the name is the answer you
@@ -33,7 +33,7 @@ provided to `project_slug`.
 
 Go to this generated folder, the project layout should look like:
 
-```
+```text
 .
 ├── .bumpversion.cfg
 ├── .editorconfig
@@ -70,7 +70,7 @@ Go to this generated folder, the project layout should look like:
 
 ```
 
-Here the project_slug is `my-package`, when you generate yours, it could be other name.
+Here the `project_slug` is `my-package`, when you generate yours, it could be other name.
 
 Also be noticed that there's `pyproject.toml` in this folder. This is the main configuration file of our project.
 
@@ -148,7 +148,7 @@ Then go to repo > settings > secrets, click on 'New repository secret', add the 
 
 In your browser, visit [install codecov app], you'll be landed at this page:
 
-![](http://images.jieyu.ai/images/202104/20210419175222.png)
+![Codecov GH App screenshot](http://images.jieyu.ai/images/202104/20210419175222.png)
 
 Click on the green `install` button at top right, choose `all repositories` then click
 on `install` button, following directions until all set.
@@ -156,7 +156,7 @@ on `install` button, following directions until all set.
 If the repo you created is a private repo, you need to set the following additional secrets,
 which is not required for public repos:
 
-- CODECOV_TOKEN, see [Codecov GitHub Action - Usage](https://github.com/marketplace/actions/codecov?version=v1.5.2#usage)
+- CODECOV_TOKEN, see [Codecov GitHub Action — Usage](https://github.com/marketplace/actions/codecov?version=v1.5.2#usage)
 
 ## Step 7: Upload code to GitHub
 
@@ -188,7 +188,7 @@ You'll need a ssh key to push the repo. You can [Generate] a key or
 
 ### Check result
 
-After pushing your code to GitHub, goto GitHub web page, navigate to your repo, then
+After pushing your code to GitHub, go to GitHub web page, navigate to your repo, then
 click on actions link, you should find screen like this:
 
 ![](http://images.jieyu.ai/images/202104/20210419170304.png)
@@ -198,14 +198,14 @@ new artifact is published under the name `project_slug`.
 
 ## Step 8. Check documentation
 
-Documentation will be published and available at *https://{your_github_account}.github.io/{your_repo}* once:
+Documentation will be published and available at *<https://{your_github_account}.github.io/{your_repo>}* once:
 
 1. the commit is tagged, and the tag name is started with 'v' (lower case)
 2. build/testing executed by GitHub CI passed
 
 If you'd like to see what it's look like now, you could run the following command:
 
-```
+```bash
 poetry run mkdocs serve
 ```
 
@@ -217,8 +217,6 @@ This will run the builtin development server for you to preview.
   instructions at [release checklist](pypi_release_checklist.md), trigger first official release and check
   result at [PyPI].
 
-
-[Edit this file]: https://github.com/waynerv/cookiecutter-pypackage/blob/master/docs/tutorial.md
 [Codecov]: https://codecov.io/
 [PYPI]: https://pypi.org
 [GitHub]: https://github.com/

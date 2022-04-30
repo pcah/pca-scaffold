@@ -1,7 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+__pypackages__/
 *.py[cod]
 *$py.class
+.cache
 
 # OSX useful to ignore
 *.DS_Store
@@ -33,6 +35,7 @@ Temporary Items
 # Distribution / packaging
 .Python
 env/
+venv/
 build/
 develop-eggs/
 dist/
@@ -92,15 +95,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# Cookiecutter
-output/
-python_boilerplate/
-cookiecutter-pypackage-env/
-
 # IDE settings
 .vscode/
-
-# mkdocs
-site/
-
-venv/
+*.swp
+*~

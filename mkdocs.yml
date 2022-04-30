@@ -1,7 +1,7 @@
-site_name: Cookiecutter Pypackage
-site_url: https://www.waynerv.com/cookiecutter-pypackage
-repo_url: https://github.com/waynerv/cookiecutter-pypackage
-repo_name: waynerv/cookiecutter-pypackage
+site_name: pca-scaffold
+site_url: https://www.pcah.com/pca-scaffold
+repo_url: https://github.com/pcah/pca-scaffold
+repo_name: pcah/pca-scaffold
 nav:
   - Introduction: index.md
   - Tutorial: tutorial.md
@@ -43,7 +43,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/waynerv
+      link: https://github.com/pcah
       name: Github
     - icon: material/email
-      link: "mailto:ampedee@gmail.com"
+      link: "mailto:github@lhaze.name"

@@ -1,14 +1,20 @@
 [tool]
 [tool.poetry]
-name = "cookiecutter-pypackage"
-version = "1.1.1"
-description = "Cookiecutter template for a Python package"
+name = "pca-scaffold"
+version = "0.1.0"
+description = "Scaffolding library for a python-clean-architecture package"
 license = "BSD-3-Clause"
-authors = ["Xie Wei <ampedee@gmail.com>"]
+authors = ["Łukasz Haze <github@lhaze.name>"]
 readme = "README.md"
-repository = "https://github.com/waynerv/cookiecutter-pypackage"
-documentation = "https://waynerv.github.io/cookiecutter-pypackage/"
-keywords = ['cookiecutter', 'template', 'package']
+repository = "https://github.com/pcah/pca-scaffold"
+documentation = "https://pcah.github.io/pca-scaffold/"
+keywords = [
+  'cookiecutter',
+  'package',
+  'pca',
+  'python-clean-architecture',
+  'template',
+]
 
 include = [
   '{{cookiecutter.project_slug}}/**/*',
@@ -17,7 +23,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6.*"
+python = ">=3.7.*"
 cookiecutter = "1.7.2"
 
 pytest = {version = "^6.2.3", optional=true}
