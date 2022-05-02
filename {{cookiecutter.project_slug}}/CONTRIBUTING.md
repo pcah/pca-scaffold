@@ -19,13 +19,13 @@ If you are reporting a bug, please include:
 
 ### Fix Bugs
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for bugs. Anything tagged with “bug” and “help
+wanted” is open to whoever wants to implement it.
 
 ### Implement Features
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for features. Anything tagged with “enhancement”
+and “help wanted” is open to whoever wants to implement it.
 
 ### Write Documentation
 
@@ -51,21 +51,21 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 1. Fork the `{{ cookiecutter.project_slug }}` repo on GitHub.
 2. Clone your fork locally
 
-    ```
-    $ git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
+    ```shell
+    git clone git@github.com:your_name_here/{{ cookiecutter.project_slug }}.git
     ```
 
 3. Ensure [poetry](https://python-poetry.org/docs/) is installed.
 4. Install dependencies and start your virtualenv:
 
-    ```
-    $ poetry install -E test -E doc -E dev
+    ```shell
+    poetry install -E test -E doc -E dev
     ```
 
 5. Create a branch for local development:
 
-    ```
-    $ git checkout -b name-of-your-bugfix-or-feature
+    ```shell
+    git checkout -b name-of-your-bugfix-or-feature
     ```
 
     Now you can make your changes locally.
@@ -73,16 +73,16 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 6. When you're done making changes, check that your changes pass the
    tests, including testing other Python versions, with tox:
 
-    ```
-    $ poetry run tox
+    ```shell
+    poetry run tox
     ```
 
 7. Commit your changes and push your branch to GitHub:
 
-    ```
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+    ```shell
+    git add .
+    git commit -m "Your detailed description of your changes."
+    git push origin name-of-your-bugfix-or-feature
     ```
 
 8. Submit a pull request through the GitHub website.
@@ -101,12 +101,11 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Tips
 
-```
-$ poetry run pytest tests/test_{{ cookiecutter.pkg_name }}.py
+```shell
+poetry run pytest tests/test_{{ cookiecutter.package_name }}.py
 ```
 
 To run a subset of tests.
-
 
 ## Deploying
 
@@ -114,10 +113,10 @@ A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in CHANGELOG.md).
 Then run:
 
-```
-$ poetry run bump2version patch # possible: major / minor / patch
-$ git push
-$ git push --tags
+```shell
+poetry run bump2version patch # possible: major / minor / patch
+git push
+git push --tags
 ```
 
 GitHub Actions will then deploy to PyPI if tests pass.

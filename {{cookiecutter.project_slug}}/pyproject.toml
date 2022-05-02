@@ -9,9 +9,11 @@
 [tool.poetry]
 name = "{{ cookiecutter.project_slug }}"
 version = "{{ cookiecutter.version }}"
-homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
+homepage = "https://github.com/pcah/{{ cookiecutter.project_slug }}"
 description = "{{ cookiecutter.project_short_description }}."
-authors = ["{{ cookiecutter.full_name.replace('\"', '\\\"') }} <{{ cookiecutter.email }}>"]
+authors = [
+    "{{ cookiecutter.full_name.replace('\"', '\\\"') }} <{{ cookiecutter.email }}>"
+]
 readme = "README.md"
 {%- if cookiecutter.open_source_license in license_classifiers %}
 license =  "{{ cookiecutter.open_source_license }}"
@@ -30,7 +32,7 @@ classifiers=[
     'Programming Language :: Python :: 3.9',
 ]
 packages = [
-    { include = "{{ cookiecutter.pkg_name }}" },
+    { include = "pca" },
     { include = "tests", format = "sdist" },
 ]
 
@@ -89,7 +91,7 @@ doc = [
 
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 [tool.poetry.scripts]
-{{ cookiecutter.project_slug }} = '{{ cookiecutter.pkg_name }}.cli:main'
+{{ cookiecutter.project_slug }} = '{{ cookiecutter.package_qualified_name }}.cli:main'
 
 {% endif -%}
 [tool.black]

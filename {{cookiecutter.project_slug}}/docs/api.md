@@ -1,1 +1,1 @@
-::: {{ cookiecutter.pkg_name }}
+::: {{ cookiecutter.package_qualified_name }}

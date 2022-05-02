@@ -2,6 +2,6 @@
 
 To use {{ cookiecutter.project_name }} in a project
 
-```
-import {{ cookiecutter.pkg_name }}
+```python
+from pca.packages import {{ cookiecutter.package_name }}
 ```

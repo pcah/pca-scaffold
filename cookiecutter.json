@@ -1,10 +1,10 @@
 {
-    "project_own_name": "scaffold",
-    "package_own_name": "{{cookiecutter.project_own_name.lower().replace(' ', '_').replace('-', '_')}}",
-    "project_name": "pca-{{cookiecutter.project_own_name.lower().replace(' ', '-').replace('_', '-')}}",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "pkg_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "Skeleton project for python-clean-architecture package",
+    "project_name": "",
+    "project_slug": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+    "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+    "package_qualified_name": "pca.packages.{{cookiecutter.package_name}}",
+    "package_path": "pca/packages/{{cookiecutter.package_name}}",
+    "project_short_description": "",
     "full_name": "Łukasz Haze",
     "email": "github@lhaze.name",
     "github_username": "lhaze",
@@ -33,7 +33,5 @@
         "docs/contributing.md",
         "docs/index.md",
         ".github/workflows/*.yml"
-    ],
-    "heading_description": "{{cookiecutter.short_description}} for python-clean-architecture.",
-    "readme_description": "helping to define {{cookiecutter.short_description[0].lower()}}{{cookiecutter.short_description[1:]}}."
+    ]
 }
