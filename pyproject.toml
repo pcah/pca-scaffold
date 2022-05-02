@@ -26,6 +26,7 @@ include = [
 python = ">=3.7.*"
 cookiecutter = "1.7.2"
 
+pdbpp = {version = "^0.10.3", optional = true}
 pytest = {version = "^6.2.3", optional=true}
 pytest-cookies = {version = "^0.6.1", optional=true}
 pyyaml = {version="^5.3.1",optional=true}
@@ -39,6 +40,7 @@ click = {version = "^8.0.1", optional = true}
 
 [tool.poetry.extras]
 dev = [
+  "pdbpp",
   "pytest",
   "pytest-cookies",
   "pyyaml",
