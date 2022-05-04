@@ -59,7 +59,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_slug }}` for 
 4. Install dependencies and start your virtualenv:
 
     ```shell
-    poetry install -E test -E doc -E dev
+    poetry install -E test -E docs -E dev
     ```
 
 5. Create a branch for local development:

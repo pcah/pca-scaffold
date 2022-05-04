@@ -1,4 +1,5 @@
 import datetime
+import json
 import os
 import shlex
 import subprocess
@@ -14,6 +15,20 @@ _DEPENDENCY_FILE = "pyproject.toml"
 _INSTALL_DEPS_COMMANDS = [
     "poetry install",
 ]
+
+
+@pytest.fixture
+def context() -> dict:
+    return {
+        "project_name": "foo",
+    }
+
+
+def get_project_info(result) -> dict:
+    """Get toplevel dir, project_slug, and project dir from baked cookies"""
+    project_info_path = result.project.join("cookiecutter.json")
+    project_info_str = project_info_path.read()
+    return json.loads(project_info_str)
 
 
 def build_commands(commands):
@@ -86,30 +101,22 @@ def execute(command: List[str], dirpath: str, timeout=30, supress_warning=True):
         return out
 
 
-def test_year_compute_in_license_file(cookies):
-    with bake_in_temp_dir(cookies) as result:
+def test_year_compute_in_license_file(cookies, context):
+    with bake_in_temp_dir(cookies, extra_context=context) as result:
         license_file_path = result.project.join("LICENSE")
         now = datetime.datetime.now()
         assert str(now.year) in license_file_path.read()
 
 
-def project_info(result):
-    """Get toplevel dir, project_slug, and project dir from baked cookies"""
-    project_path = str(result.project)
-    project_slug = os.path.split(project_path)[-1]
-    project_dir = os.path.join(project_path, project_slug.replace("-", "_"))
-    return project_path, project_slug, project_dir
-
-
-def test_bake_with_defaults(cookies):
-    with bake_in_temp_dir(cookies) as result:
+def test_bake_with_defaults(cookies, context):
+    with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert result.project.isdir()
         assert result.exit_code == 0
         assert result.exception is None
 
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert _DEPENDENCY_FILE in found_toplevel_files
-        assert "python_boilerplate" in found_toplevel_files
+        assert "pca" in found_toplevel_files
         assert "setup.cfg" in found_toplevel_files
         assert "tests" in found_toplevel_files
 
@@ -119,8 +126,8 @@ def test_bake_with_defaults(cookies):
             assert "  - Home: index.md\n" in lines
 
 
-def test_bake_without_author_file(cookies):
-    with bake_in_temp_dir(cookies, extra_context={"create_author_file": "n"}) as result:
+def test_bake_without_author_file(cookies, context):
+    with bake_in_temp_dir(cookies, extra_context={**context, "create_author_file": "n"}) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert "AUTHORS.md" not in found_toplevel_files
         doc_files = [f.basename for f in result.project.join("docs").listdir()]
@@ -146,16 +153,18 @@ def test_bake_without_author_file(cookies):
         ("GPL-3.0-only", "GNU GENERAL PUBLIC LICENSE"),
     ],
 )
-def test_bake_selecting_license(cookies, license_info):
+def test_bake_selecting_license(cookies, context, license_info):
     license, target_string = license_info
-    with bake_in_temp_dir(cookies, extra_context={"open_source_license": license}) as result:
+    with bake_in_temp_dir(
+        cookies, extra_context={**context, "open_source_license": license}
+    ) as result:
         assert target_string in result.project.join("LICENSE").read()
         assert license in result.project.join(_DEPENDENCY_FILE).read()
 
 
-def test_bake_not_open_source(cookies):
+def test_bake_not_open_source(cookies, context):
     with bake_in_temp_dir(
-        cookies, extra_context={"open_source_license": "Not open source"}
+        cookies, extra_context={**context, "open_source_license": "Not open source"}
     ) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert _DEPENDENCY_FILE in found_toplevel_files
@@ -164,34 +173,15 @@ def test_bake_not_open_source(cookies):
         assert "license" not in result.project.join(_DEPENDENCY_FILE).read()
 
 
-def test_docstrings_style(cookies):
-    with bake_in_temp_dir(cookies, extra_context={"docstrings_style": "google"}) as result:
+def test_docstrings_style(cookies, context):
+    with bake_in_temp_dir(
+        cookies, extra_context={**context, "docstrings_style": "google"}
+    ) as result:
         assert result.project.isdir()
         # Test lint rule contains google style
         flake8_conf_file_apth = result.project.join("setup.cfg")
         lines = flake8_conf_file_apth.readlines()
         assert "docstring-convention = google" in "".join(lines)
-
-
-# def test_project_with_hyphen_in_module_name(cookies):
-#     result = cookies.bake(
-#         extra_context={'project_name': 'something-with-a-dash'}
-#     )
-#     assert result.project is not None
-#     project_path = str(result.project)
-#
-#     # when:
-#     travis_setup_cmd = ('python travis_pypi_setup.py'
-#                         ' --repo audreyr/cookiecutter-pypackage'
-#                         ' --password invalidpass')
-#     run_inside_dir(travis_setup_cmd, project_path)
-#
-#     # then:
-#     result_travis_config = yaml.load(
-#         open(os.path.join(project_path, ".travis.yml"))
-#     )
-#     assert "secure" in result_travis_config["deploy"]["password"],\
-#         "missing password config in .travis.yml"
 
 
 @pytest.mark.parametrize(
@@ -201,27 +191,29 @@ def test_docstrings_style(cookies):
         ({"command_line_interface": "click"}, True),
     ],
 )
-def test_bake_with_no_console_script(cookies, args):
-    context, is_present = args
-    result = cookies.bake(extra_context=context)
-    project_path, project_slug, project_dir = project_info(result)
-    found_project_files = os.listdir(project_dir)
-    assert ("cli.py" in found_project_files) == is_present
+def test_bake_console_script(cookies, context, args):
+    extra_context, is_present = args
+    result = cookies.bake(extra_context={**context, **extra_context})
+    project_info = get_project_info(result)
+    package_dir = result.project.join(project_info["package_path"])
+    found_package_files = os.listdir(package_dir)
+    assert ("cli.py" in found_package_files) == is_present
 
-    pyproject_path = os.path.join(project_path, _DEPENDENCY_FILE)
+    pyproject_path = result.project.join(_DEPENDENCY_FILE)
     with open(pyproject_path, "r") as pyproject_file:
         assert ("[tool.poetry.scripts]" in pyproject_file.read()) == is_present
 
 
-def test_bake_with_console_script_cli(cookies):
-    context = {"command_line_interface": "click"}
+def test_bake_console_script_working(cookies, context):
+    context = {**context, "command_line_interface": "click"}
     result = cookies.bake(extra_context=context)
-    project_path, project_slug, project_dir = project_info(result)
-    module_path = os.path.join(project_dir, "cli.py")
+    project_info = get_project_info(result)
+    package_dir = result.project.join(project_info["package_path"])
+    module_path = package_dir.join("cli.py")
 
-    out = execute([sys.executable, module_path], project_dir)
-    assert project_slug in out
+    out = execute([sys.executable, module_path], package_dir)
+    assert project_info["project_slug"] in out
 
-    out = execute([sys.executable, module_path, "--help"], project_dir)
+    out = execute([sys.executable, module_path, "--help"], package_dir)
 
     assert "Show this message and exit." in out

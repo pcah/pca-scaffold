@@ -34,10 +34,11 @@ def execute(*args, supress_exception=False, cwd=None):
 
 
 def init_git():
-    # workaround for issue #1
     if not os.path.exists(os.path.join(PROJECT_DIRECTORY, ".git")):
-        execute("git", "config", "--global", "init.defaultBranch", "main", cwd=PROJECT_DIRECTORY)
         execute("git", "init", cwd=PROJECT_DIRECTORY)
+        execute("git", "add", "-A", cwd=PROJECT_DIRECTORY)
+        execute("git", "commit", "-m", "'Initial commit'", cwd=PROJECT_DIRECTORY)
+        execute("git", "tag", "v{{cookiecutter.version}}", cwd=PROJECT_DIRECTORY)
 
 
 def install_pre_commit_hooks():
@@ -50,6 +51,7 @@ if __name__ == "__main__":
     if "no" in "{{ cookiecutter.command_line_interface|lower }}":
         cli_file = os.path.join("{{ cookiecutter.package_path }}", "cli.py")
         remove_file(cli_file)
+        remove_file("tests/test_cli.py")
 
     if "Not open source" == "{{ cookiecutter.open_source_license }}":
         remove_file("LICENSE")

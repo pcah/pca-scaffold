@@ -37,7 +37,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6.2,<4.0"
+python = "^3.7"
 {%- if cookiecutter.command_line_interface|lower == 'click' %}
 click = "8.0.1"
 {%- endif %}
@@ -88,14 +88,14 @@ dev = [
     "bump2version"
 ]
 
-doc = [
+docs = [
     "mkdocs",
     "mkdocs-include-markdown-plugin",
     "mkdocs-material",
     "mkdocstrings",
     "mkdocs-material-extension",
     "mkdocs-autorefs"
-    ]
+]
 
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 [tool.poetry.scripts]
@@ -131,7 +131,11 @@ ensure_newline_before_comments = true
 line_length = 120
 skip_gitignore = true
 # you can skip files as below
-#skip_glob = docs/conf.py
+# skip_glob = docs/conf.py
+
+[tool.pydocstyle]
+match_dir = "{{cookiecutter.package_path}}/**"
+convention = "{{cookiecutter.docstrings_style}}"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

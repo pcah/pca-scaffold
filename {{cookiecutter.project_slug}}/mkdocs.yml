@@ -55,7 +55,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+      link: https://github.com/pcah/{{ cookiecutter.project_slug }}
       name: Github
     - icon: material/email
       link: "mailto:{{ cookiecutter.email }}"

@@ -1,0 +1,23 @@
+{
+    "project_name": "{{cookiecutter.project_name}}",
+    "package_name": "{{cookiecutter.package_name}}",
+    "project_slug": "{{cookiecutter.project_slug}}",
+    "package_qualified_name": "{{cookiecutter.package_qualified_name}}",
+    "package_path": "{{cookiecutter.package_path}}",
+    "project_short_description": "{{cookiecutter.project_short_description}}",
+    "full_name": "{{cookiecutter.full_name}}",
+    "email": "{{cookiecutter.email}}",
+    "github_username": "{{cookiecutter.github_username}}",
+    "version": "{{cookiecutter.version}}",
+    "command_line_interface": "{{cookiecutter.command_line_interface}}",
+    "open_source_license": "{{cookiecutter.open_source_license}}",
+    "docstrings_style": "{{cookiecutter.docstrings_style}}",
+    "use_mypy": "{{cookiecutter.use_mypy}}",
+    "install_precommit_hooks": "{{cookiecutter.install_precommit_hooks}}",
+    "_copy_without_render": [
+        "docs/changelog.md",
+        "docs/contributing.md",
+        "docs/index.md",
+        ".github/workflows/*.yml"
+    ]
+}

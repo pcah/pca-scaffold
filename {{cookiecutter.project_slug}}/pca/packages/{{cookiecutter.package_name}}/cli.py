@@ -6,7 +6,7 @@ import click
 
 @click.command()
 def main():
-    """Main entrypoint."""
+    """Run the main entrypoint."""
     click.echo("{{ cookiecutter.project_slug }}")
     click.echo("=" * len("{{ cookiecutter.project_slug }}"))
     click.echo("{{ cookiecutter.project_short_description }}")
