@@ -37,7 +37,7 @@ def init_git():
     if not os.path.exists(os.path.join(PROJECT_DIRECTORY, ".git")):
         execute("git", "init", cwd=PROJECT_DIRECTORY)
         execute("git", "add", "-A", cwd=PROJECT_DIRECTORY)
-        execute("git", "commit", "-m", "'Initial commit'", cwd=PROJECT_DIRECTORY)
+        execute("git", "commit", "-m", "Initial commit", cwd=PROJECT_DIRECTORY)
         execute("git", "tag", "v{{cookiecutter.version}}", cwd=PROJECT_DIRECTORY)
 
 
