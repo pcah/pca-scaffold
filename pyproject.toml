@@ -9,17 +9,17 @@ readme = "README.md"
 repository = "https://github.com/pcah/pca-scaffold"
 documentation = "https://pcah.github.io/pca-scaffold/"
 keywords = [
-  'cookiecutter',
-  'package',
-  'pca',
-  'python-clean-architecture',
-  'template',
+    'cookiecutter',
+    'package',
+    'pca',
+    'python-clean-architecture',
+    'template',
 ]
 
 include = [
-  '{{cookiecutter.project_slug}}/**/*',
-  'cookiecutter.json',
-  'hooks/*'
+    '{{cookiecutter.project_slug}}/**/*',
+    'cookiecutter.json',
+    'hooks/*'
 ]
 
 [tool.poetry.dependencies]
@@ -36,22 +36,36 @@ pdbpp = {version = "^0.10.3", optional = true}
 pytest = {version = "^7.1.2", optional=true}
 pytest-cookies = {version = "^0.6.1", optional=true}
 pytest-cov = {version="^3.0.0",optional=true}
-pyyaml = {version="^6.0.0",optional=true}
+pyyaml = {version="^6.0",optional=true}
 tox = {version = "^3.25.0", optional=true}
 
 [tool.poetry.extras]
 dev = [
-  "click",
-  "mkdocs",
-  "mkdocs-include-markdown-plugin",
-  "mkdocs-material",
-  "mkdocs-material-extensions",
-  "pdbpp",
-  "pytest",
-  "pytest-cookies",
-  "pytest-cov",
-  "pyyaml",
-  "tox",
+    "click",
+    "pdbpp",
+    "pyyaml",
+]
+
+test = [
+    "black",
+    "flake8",
+    "flake8-docstrings",
+    "flake8-typing-imports",
+    "isort",
+    "pytest",
+    "pytest-cookies",
+    "pytest-cov",
+    "tox",
+]
+
+docs = [
+    "mkdocs",
+    "mkdocs-autorefs",
+    "mkdocs-include-markdown-plugin",
+    "mkdocs-material",
+    "mkdocs-material-extension",
+    "mkdocstrings",
+    "mkdocstrings-sourcelink",
 ]
 
 [tool.black]
