@@ -1,0 +1,17 @@
+repos:
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.13
+    hooks:
+      - id: forbid-crlf
+      - id: remove-crlf
+      - id: forbid-tabs
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: fix-byte-order-marker
+      - id: check-added-large-files
+      - id: detect-private-key
