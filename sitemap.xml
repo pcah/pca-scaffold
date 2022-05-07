@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/console_script_setup/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/console_script_setup/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/faq/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/faq/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/history/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/history/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/pypi_release_checklist/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/pypi_release_checklist/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.pcah.com/pca-scaffold/tutorial/</loc>
-         <lastmod>2022-05-05</lastmod>
+         <loc>http://pcah.github.io/pca-scaffold/tutorial/</loc>
+         <lastmod>2022-05-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
