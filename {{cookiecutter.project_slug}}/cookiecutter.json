@@ -1,9 +1,12 @@
 {
     "project_name": "{{cookiecutter.project_name}}",
+    "project_owner": "{{cookiecutter.project_owner}}",
     "package_name": "{{cookiecutter.package_name}}",
     "project_slug": "{{cookiecutter.project_slug}}",
     "package_qualified_name": "{{cookiecutter.package_qualified_name}}",
     "package_path": "{{cookiecutter.package_path}}",
+    "repo_url": "{{cookiecutter.repo_url}}",
+    "docs_url": "{{cookiecutter.docs_url}}",
     "project_short_description": "{{cookiecutter.project_short_description}}",
     "full_name": "{{cookiecutter.full_name}}",
     "email": "{{cookiecutter.email}}",
@@ -14,10 +17,4 @@
     "docstrings_style": "{{cookiecutter.docstrings_style}}",
     "use_mypy": "{{cookiecutter.use_mypy}}",
     "install_precommit_hooks": "{{cookiecutter.install_precommit_hooks}}",
-    "_copy_without_render": [
-        "docs/changelog.md",
-        "docs/contributing.md",
-        "docs/index.md",
-        ".github/workflows/*.yml"
-    ]
 }

@@ -1,9 +1,12 @@
 {
     "project_name": "",
+    "project_owner": "pcah",
     "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
     "project_slug": "pca-{{cookiecutter.package_name}}",
     "package_qualified_name": "pca.packages.{{cookiecutter.package_name}}",
     "package_path": "pca/packages/{{cookiecutter.package_name}}",
+    "repo_url": "https://github.com/{{cookiecutter.project_owner}}/{{cookiecutter.project_slug}}",
+    "docs_url": "https://{{cookiecutter.project_owner}}.github.io/{{cookiecutter.project_slug}}",
     "project_short_description": "",
     "full_name": "Łukasz Haze",
     "email": "github@lhaze.name",

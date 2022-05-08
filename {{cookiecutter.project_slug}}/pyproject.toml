@@ -7,10 +7,11 @@
 } -%}
 [tool]
 [tool.poetry]
-name = "{{ cookiecutter.project_slug }}"
-version = "{{ cookiecutter.version }}"
-homepage = "https://github.com/pcah/{{ cookiecutter.project_slug }}"
-description = "{{ cookiecutter.project_short_description }}."
+name = "{{cookiecutter.project_slug}}"
+version = "{{cookiecutter.version}}"
+repository = "{cookiecutter.repo_url}}/"
+documentation = "{{cookiecutter.docs_url}}/"
+description = "{{cookiecutter.project_short_description}}."
 authors = [
     "{{ cookiecutter.full_name.replace('\"', '\\\"') }} <{{ cookiecutter.email }}>"
 ]
@@ -26,10 +27,10 @@ classifiers=[
 {%- endif %}
     'Natural Language :: English',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
 ]
 packages = [
     { include = "pca" },
@@ -105,9 +106,9 @@ docs = [
 
 {% endif -%}
 [tool.black]
-line-length = 120
+line-length = 119
 skip-string-normalization = true
-target-version = ['py36', 'py37', 'py38']
+target-version = ['py37', 'py38', 'py39', 'py310']
 include = '\.pyi?$'
 exclude = '''
 /(

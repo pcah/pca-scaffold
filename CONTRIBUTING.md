@@ -81,9 +81,7 @@ Enhancement suggestions are tracked on the [issue tracker](https://github.com/pc
 
 #### Local development
 
-You will need Poetry to start contributing on the `pca-scaffold` codebase.
-
-You will first need to ensure you have all the tools of the dev environment installed:
+You will first need to ensure you have all the tools of the dev environment installed to start contributing on the `{{cookiecutter.project_slug}}` codebase:
 
 - [`git`](https://git-scm.com/)
 - [`poetry`](https://python-poetry.org/)
@@ -119,8 +117,6 @@ To change your python version, use [`poetry`'s environment management](https://p
     ```bash
     poetry run tox
     ```
-
-    where `VERSION` becomes one of the `py310|py39|py38|py37|pypy3` (for details, check [tox.ini]([tox.ini](https://github.com/pcah/pca-scaffold/blob/master/tox.ini))).
 
 - To run the test suite under specific development environment, use:
 

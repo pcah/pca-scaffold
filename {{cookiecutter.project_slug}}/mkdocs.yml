@@ -1,6 +1,6 @@
-site_name: {{ cookiecutter.project_name }}
-site_url: https://{{ cookiecutter.github_username }}.github.io/{{ cookiecutter.project_slug }}
-repo_url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+site_name: {{cookiecutter.project_name}}
+site_url: {{cookiecutter.docs_url}}
+repo_url: {{cookiecutter.repo_url}}
 repo_name: {{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 #strict: true
 nav:
@@ -55,10 +55,10 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/pcah/{{ cookiecutter.project_slug }}
+      link: {{cookiecutter.repo_url}}
       name: Github
     - icon: material/email
-      link: "mailto:{{ cookiecutter.email }}"
+      link: "mailto:{{cookiecutter.email}}"
   # to enable disqus, uncomment the following and put your disqus id below
   # disqus: disqus_id
 # uncomment the following and put your google tracking id below to enable GA
