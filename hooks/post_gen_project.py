@@ -34,7 +34,9 @@ def execute(*args, supress_exception=False, cwd=None):
 
 
 def init_git():
-    if not os.path.exists(os.path.join(PROJECT_DIRECTORY, ".git")):
+    if os.getenv("PCA_SCAFFOLD_DONT_INIT_GIT", False) != "1" and not os.path.exists(
+        os.path.join(PROJECT_DIRECTORY, ".git")
+    ):
         execute("git", "init", cwd=PROJECT_DIRECTORY)
         execute("git", "add", "-A", cwd=PROJECT_DIRECTORY)
         execute("git", "commit", "-m", "Initial commit", cwd=PROJECT_DIRECTORY)

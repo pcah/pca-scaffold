@@ -8,7 +8,7 @@ nav:
   - Console script: console_script_setup.md
   - Release checklist: pypi_release_checklist.md
   - FAQ: faq.md
-  - Contributing: CONTRIBUTING.md
+  - Contributing: contributing.md
   - History: history.md
 
 theme:

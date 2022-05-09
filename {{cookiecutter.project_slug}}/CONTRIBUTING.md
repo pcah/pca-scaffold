@@ -124,7 +124,7 @@ To change your python version, use [`poetry`'s environment management](https://p
     poetry run tox -e VERSION
     ```
 
-    where `VERSION` becomes one of the `py310|py39|py38|py37|pypy3` (for details, check [tox.ini]([tox.ini]({{cookiecutter.repo_url}}/blob/master/tox.ini))).
+    where `VERSION` becomes one of the `py310|py39|py38|py37|pypy3` (for details, check [tox.ini]({{cookiecutter.repo_url}}/blob/master/tox.ini)).
 
 - To check code styling rules, run linters:
 

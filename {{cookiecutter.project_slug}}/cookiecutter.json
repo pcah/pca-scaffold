@@ -16,5 +16,5 @@
     "open_source_license": "{{cookiecutter.open_source_license}}",
     "docstrings_style": "{{cookiecutter.docstrings_style}}",
     "use_mypy": "{{cookiecutter.use_mypy}}",
-    "install_precommit_hooks": "{{cookiecutter.install_precommit_hooks}}",
+    "install_precommit_hooks": "{{cookiecutter.install_precommit_hooks}}"
 }
