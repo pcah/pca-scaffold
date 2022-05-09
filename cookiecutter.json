@@ -2,7 +2,7 @@
     "project_name": "",
     "project_owner": "pcah",
     "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
-    "project_slug": "pca-{{cookiecutter.package_name}}",
+    "project_slug": "pca-{{cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-')}}",
     "package_qualified_name": "pca.packages.{{cookiecutter.package_name}}",
     "package_path": "pca/packages/{{cookiecutter.package_name}}",
     "repo_url": "https://github.com/{{cookiecutter.project_owner}}/{{cookiecutter.project_slug}}",
