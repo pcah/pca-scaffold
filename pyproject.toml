@@ -4,7 +4,9 @@ name = "pca-scaffold"
 version = "0.1.0"
 description = "Scaffolding library for a python-clean-architecture package"
 license = "BSD-3-Clause"
-authors = ["Łukasz Haze <github@lhaze.name>"]
+authors = [
+    "Łukasz Haze <github@lhaze.name>",
+]
 readme = "README.md"
 repository = "https://github.com/pcah/pca-scaffold"
 documentation = "https://pcah.github.io/pca-scaffold/"
@@ -14,6 +16,23 @@ keywords = [
     'pca',
     'python-clean-architecture',
     'template',
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
 
 include = [
@@ -66,6 +85,12 @@ docs = [
 
 [tool.black]
 line-length = 119
+target-version = [
+    "py37",
+    "py38",
+    "py39",
+    "py310"
+]
 include = '\.pyi?$'
 exclude = '''
 /(

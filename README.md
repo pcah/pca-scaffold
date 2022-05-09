@@ -2,12 +2,18 @@
 
 # pca-scaffold
 
+![GitHub tag](https://img.shields.io/github/v/tag/pcah/pca-scaffold)
+[![development status](https://img.shields.io/badge/development%20status-alpha-yellow.svg)](https://pypi.org/project/pca-scaffold/)
+[![supports](https://img.shields.io/pypi/pyversions/pca-scaffold)]([tox.ini](https://pypi.org/project/pca-scaffold/))
+[![CI Status](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml/badge.svg)](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml)
+[![codecov](https://codecov.io/gh/pcah/pca-scaffold/branch/master/graph/badge.svg)](https://codecov.io/gh/pcah/pca-scaffold)
+
 Scaffolding template for a python-clean-architecture package.
 
-[![CI Status](https://github.com/pcah/pca-scaffold/actions/workflows/dev.yml/badge.svg)](https://github.com/pcah/pca-scaffold/actions/workflows/dev.yml)
-[![License](https://img.shields.io/pypi/l/ppw)](https://opensource.org/licenses/BSD-2-Clause)
-
 * Documentation: <https://pcah.github.io/pca-scaffold>
+* GitHub: <https://github.com/pcah/pca-scaffold>
+* PyPI: <https://pypi.org/project/pca-scaffold/>
+* Free software: [BSD-3-Clause](./LICENSE)
 
 ## Features
 
@@ -33,7 +39,7 @@ This tool will create Python project with the following features:
 
 ## Quickstart
 
-Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
+Install the latest [Cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.2/) if you haven't installed it yet (this requires Cookiecutter `1.4.0` or higher):
 
 ```bash
 pip install -U cookiecutter
@@ -45,8 +51,10 @@ Generate a Python package project:
 cookiecutter https://github.com/pcah/pca-scaffold.git
 ```
 
-Then follow **[Tutorial](docs/tutorial.md)** to finish other configurations.
+Then follow **[Tutorial](https://pcah.github.io/pca-scaffold/tutorial/)** to finish other configurations.
 
 # Credits
 
-This repo is forked from [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage), which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage).
+* This repo is forked from [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage),
+* which originally forked from [audreyfeldroy/cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage),
+* and custom adjustments for [python-clean-architecture](https://github.com/pcah/python-clean-architecture) by [pcah](https://github.com/pcah).
