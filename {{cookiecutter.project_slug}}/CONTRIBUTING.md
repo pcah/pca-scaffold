@@ -92,7 +92,7 @@ You will first need to ensure you have all the tools of the dev environment inst
 Then, clone the repository using `git` and place yourself in its directory:
 
 ```bash
-git clone git@github.com:{{cookiecutter.gh_repo_id}}.git
+git clone git@github.com:{{cookiecutter.project_owner}}/{{cookiecutter.project_slug}}.git
 cd {{cookiecutter.project_slug}}
 ```
 
