@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://pcah.github.io/pca-scaffold/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pcah.github.io/pca-scaffold/console_script_setup/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://pcah.github.io/pca-scaffold/contributing/</loc>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pcah.github.io/pca-scaffold/faq/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pcah.github.io/pca-scaffold/history/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pcah.github.io/pca-scaffold/pypi_release_checklist/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://pcah.github.io/pca-scaffold/tutorial/</loc>
-         <lastmod>2022-05-07</lastmod>
+         <lastmod>2022-05-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
