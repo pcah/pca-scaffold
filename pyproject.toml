@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "pca-scaffold"
-version = "0.1.1"
+version = "0.1.2"
 description = "Scaffolding library for a python-clean-architecture package"
 license = "BSD-3-Clause"
 authors = [
