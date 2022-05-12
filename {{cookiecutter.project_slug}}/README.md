@@ -2,25 +2,26 @@
 
 ## python-clean-architecture
 
-# {{ cookiecutter.project_name }}
+# {{cookiecutter.project_name}}
 
 {% if is_open_source %}
-[![pypi](<https://img.shields.io/pypi/v/>{{ cookiecutter.project_slug }}.svg)](<https://pypi.org/project/>{{ cookiecutter.project_slug }}/)
-[![python](<https://img.shields.io/pypi/pyversions/>{{ cookiecutter.project_slug }}.svg)](<https://pypi.org/project/>{{ cookiecutter.project_slug }}/)
-[![Build Status](<https://github.com/>{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions/workflows/dev.yml/badge.svg)](<https://github.com/>{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/actions/workflows/dev.yml)
-[![codecov](<https://codecov.io/gh/>{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/branch/main/graphs/badge.svg)](<https://codecov.io/github/>{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }})
+[![GitHub tag](https://img.shields.io/github/v/tag/{{cookiecutter.project_owner}}/{{cookiecutter.project_slug}})]({{cookiecutter.repo_url}}/tags)
+[![development status](https://img.shields.io/badge/development%20status-pre--alpha-orange.svg)](https://pypi.org/project/{{cookiecutter.project_slug}}/)
+[![supports](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}.svg)]({{cookiecutter.repo_url}}/blob/master/pyproject.toml)
+[![CI status]({{cookiecutter.repo_url}}/actions/workflows/check_code_quality.yml/badge.svg)]({{cookiecutter.repo_url}}/actions/workflows/check_code_quality.yml)
+[![codecov](https://codecov.io/gh/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}/branch/main/graphs/badge.svg)](https://codecov.io/github/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}})
 
 {% else %}
-{% endif %}
+[![Build Status]({{cookiecutter.repo_url}}/actions/workflows/check_code_quality.yml/badge.svg)]({{cookiecutter.repo_url}}/actions/workflows/check_code_quality.yml)
 
+{% endif %}
 {{cookiecutter.project_short_description}}
 
 {% if is_open_source %}
-
 * Documentation: <{{cookiecutter.docs_url}}>
 * GitHub: <{{cookiecutter.repo_url}}>
-* PyPI: <https://pypi.org/project/{{ cookiecutter.project_slug }}/>
-* Free software: [{{ cookiecutter.open_source_license }}](./LICENSE)
+* PyPI: <https://pypi.org/project/{{cookiecutter.project_slug}}/>
+* Free software: [{{cookiecutter.open_source_license}}](./LICENSE)
 {% endif %}
 
 ## Features

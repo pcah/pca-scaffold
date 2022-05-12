@@ -2,10 +2,10 @@
 
 # pca-scaffold
 
-![GitHub tag](https://img.shields.io/github/v/tag/pcah/pca-scaffold)
+[![GitHub tag](https://img.shields.io/github/v/tag/pcah/pca-scaffold)](https://github.com/pcah/pca-scaffold/tags)
 [![development status](https://img.shields.io/badge/development%20status-alpha-yellow.svg)](https://pypi.org/project/pca-scaffold/)
-[![supports](https://img.shields.io/pypi/pyversions/pca-scaffold)]([tox.ini](https://pypi.org/project/pca-scaffold/))
-[![CI Status](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml/badge.svg)](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml)
+[![supports](https://img.shields.io/pypi/pyversions/pca-scaffold)](https://github.com/pcah/pca-scaffold/blob/master/pyproject.toml)
+[![CI status](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml/badge.svg)](https://github.com/pcah/pca-scaffold/actions/workflows/check_code_quality.yml)
 [![codecov](https://codecov.io/gh/pcah/pca-scaffold/branch/master/graph/badge.svg)](https://codecov.io/gh/pcah/pca-scaffold)
 
 Scaffolding template for a python-clean-architecture package.
